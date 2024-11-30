@@ -1,0 +1,1724 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="QLKSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DATDICHVU_TBL">
+          <Key>
+            <PropertyRef Name="MADATDICHVU" />
+          </Key>
+          <Property Name="MADATDICHVU" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MADICHVU" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MAPHONGDAT" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SOLUONG" Type="int" Nullable="false" />
+          <Property Name="NGAYDAT" Type="datetime" Nullable="false" />
+          <Property Name="GIADICHVU" Type="int" Nullable="false" />
+          <Property Name="MATRANGTHAI" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MAHOADONDV" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DICHVU_TBL">
+          <Key>
+            <PropertyRef Name="MADICHVU" />
+          </Key>
+          <Property Name="MADICHVU" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TENDICHVU" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MALOAIDV" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="GIADICHVU" Type="int" Nullable="false" />
+          <Property Name="MATRANGTHAI" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MOTA" Type="nvarchar" MaxLength="99" />
+          <Property Name="MALOAIHINH" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GIOITINH_TBL">
+          <Key>
+            <PropertyRef Name="MAGT" />
+          </Key>
+          <Property Name="MAGT" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="GIOITINH" Type="nvarchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HOADONDATDV_TBL">
+          <Key>
+            <PropertyRef Name="MAHOADONDV" />
+          </Key>
+          <Property Name="MAHOADONDV" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MATRANGTHAI" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="GIATRIBANDAU" Type="int" Nullable="false" />
+          <Property Name="GIAMGIA" Type="int" Nullable="false" />
+          <Property Name="GIATHANHTOAN" Type="int" Nullable="false" />
+          <Property Name="NGAYTHANHTOAN" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HOADONPHONG_TBL">
+          <Key>
+            <PropertyRef Name="MAHOADON" />
+          </Key>
+          <Property Name="MAHOADON" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MAPHONGDAT" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MATRANGTHAI" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NGAYTHANHTOAN" Type="datetime" Nullable="false" />
+          <Property Name="MATHOIDIEM" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="GIATRIBANDAU" Type="int" Nullable="false" />
+          <Property Name="GIAMGIA" Type="int" Nullable="false" />
+          <Property Name="GIATHANHTOAN" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KHACHHANG_TBL">
+          <Key>
+            <PropertyRef Name="IDKHACH" />
+          </Key>
+          <Property Name="IDKHACH" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="HOVATEN" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MAGT" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="SOLIENHE" Type="nvarchar" MaxLength="11" />
+          <Property Name="EMAIL" Type="nvarchar" MaxLength="50" />
+          <Property Name="QUEQUAN" Type="nvarchar" MaxLength="99" />
+          <Property Name="MAQT" Type="nvarchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LOAIDV_TBL">
+          <Key>
+            <PropertyRef Name="MALOAIDV" />
+          </Key>
+          <Property Name="MALOAIDV" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TENLOAIDV" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MOTA" Type="nvarchar" MaxLength="99" />
+        </EntityType>
+        <EntityType Name="LOAIHINHDP_TBL">
+          <Key>
+            <PropertyRef Name="MALOAIHINH" />
+          </Key>
+          <Property Name="MALOAIHINH" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TENLOAIHINH" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MOTA" Type="nvarchar" MaxLength="99" />
+        </EntityType>
+        <EntityType Name="LOAIHINHDV_TBL">
+          <Key>
+            <PropertyRef Name="MALOAIHINH" />
+          </Key>
+          <Property Name="MALOAIHINH" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TENLOAIHINH" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MOTA" Type="nvarchar" MaxLength="99" />
+        </EntityType>
+        <EntityType Name="LOAIPHONG_TBL">
+          <Key>
+            <PropertyRef Name="MALOAIPHONG" />
+          </Key>
+          <Property Name="MALOAIPHONG" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TENLOAIPHONG" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SUCCHUA" Type="int" Nullable="false" />
+          <Property Name="SOGIUONG" Type="int" Nullable="false" />
+          <Property Name="TIENTHEOD" Type="int" Nullable="false" />
+          <Property Name="TIENTHEOH" Type="int" Nullable="false" />
+          <Property Name="MOTA" Type="nvarchar" MaxLength="99" />
+        </EntityType>
+        <EntityType Name="NHANVIEN_TBL">
+          <Key>
+            <PropertyRef Name="IDNV" />
+          </Key>
+          <Property Name="IDNV" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="HOVATEN" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="HINHNEN" Type="image" Nullable="false" />
+          <Property Name="MAGT" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="SOLIENHE" Type="nvarchar" MaxLength="11" />
+          <Property Name="EMAIL" Type="nvarchar" MaxLength="50" />
+          <Property Name="QUEQUAN" Type="nvarchar" MaxLength="99" />
+          <Property Name="MAQT" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="NGAYHIEULUC" Type="date" Nullable="false" />
+          <Property Name="MATRANGTHAI" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PAYMENTTIME_TBL">
+          <Key>
+            <PropertyRef Name="MATHOIDIEM" />
+          </Key>
+          <Property Name="MATHOIDIEM" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TENTHOIDIEM" Type="nvarchar" MaxLength="99" Nullable="false" />
+          <Property Name="MOTA" Type="nvarchar" MaxLength="99" />
+        </EntityType>
+        <EntityType Name="PHONGDAT_TBL">
+          <Key>
+            <PropertyRef Name="MAPHONGDAT" />
+          </Key>
+          <Property Name="MAPHONGDAT" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IDKHACH" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MAPHONG" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NGAYDAT" Type="datetime" Nullable="false" />
+          <Property Name="NGAYLAY" Type="datetime" Nullable="false" />
+          <Property Name="NGAYTRA" Type="datetime" Nullable="false" />
+          <Property Name="THOIHAN" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="MALOAIHINH" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="GIAPHONG" Type="int" Nullable="false" />
+          <Property Name="MATRANGTHAI" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="GHICHU" Type="nvarchar" MaxLength="99" />
+        </EntityType>
+        <EntityType Name="PHONGNGHI_TBL">
+          <Key>
+            <PropertyRef Name="MAPHONG" />
+          </Key>
+          <Property Name="MAPHONG" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TENPHONG" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TANGTHU" Type="int" Nullable="false" />
+          <Property Name="MALOAIPHONG" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MATINHTRANG" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MATRANGTHAI" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="QUOCTICH_TBL">
+          <Key>
+            <PropertyRef Name="MAQT" />
+          </Key>
+          <Property Name="MAQT" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="QUOCTICH" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="QUYENHAN_TBL">
+          <Key>
+            <PropertyRef Name="MAQH" />
+          </Key>
+          <Property Name="MAQH" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="ROLE" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MOTA" Type="nvarchar" MaxLength="99" />
+        </EntityType>
+        <EntityType Name="TAIKHOAN_TBL">
+          <Key>
+            <PropertyRef Name="IDNV" />
+          </Key>
+          <Property Name="IDNV" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PASSWORD" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MAQH" Type="nvarchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TANGHOTEL_TBL">
+          <Key>
+            <PropertyRef Name="TANGTHU" />
+          </Key>
+          <Property Name="TANGTHU" Type="int" Nullable="false" />
+          <Property Name="TENTANG" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TINHTRANGPHONG_TBL">
+          <Key>
+            <PropertyRef Name="MATINHTRANG" />
+          </Key>
+          <Property Name="MATINHTRANG" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TENTINHTRANG" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MOTA" Type="nvarchar" MaxLength="99" />
+        </EntityType>
+        <EntityType Name="TRANGTHAIDATDV_TBL">
+          <Key>
+            <PropertyRef Name="MATRANGTHAI" />
+          </Key>
+          <Property Name="MATRANGTHAI" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TENTRANGTHAI" Type="nvarchar" MaxLength="99" Nullable="false" />
+          <Property Name="MOTA" Type="nvarchar" MaxLength="99" />
+        </EntityType>
+        <EntityType Name="TRANGTHAIDP_TBL">
+          <Key>
+            <PropertyRef Name="MATRANGTHAI" />
+          </Key>
+          <Property Name="MATRANGTHAI" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TENTRANGTHAI" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MOTA" Type="nvarchar" MaxLength="99" />
+        </EntityType>
+        <EntityType Name="TRANGTHAIDV_TBL">
+          <Key>
+            <PropertyRef Name="MATRANGTHAI" />
+          </Key>
+          <Property Name="MATRANGTHAI" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TENTRANGTHAI" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MOTA" Type="nvarchar" MaxLength="99" />
+        </EntityType>
+        <EntityType Name="TRANGTHAIHD_TBL">
+          <Key>
+            <PropertyRef Name="MATRANGTHAI" />
+          </Key>
+          <Property Name="MATRANGTHAI" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TENTRANGTHAI" Type="nvarchar" MaxLength="99" Nullable="false" />
+          <Property Name="MOTA" Type="nvarchar" MaxLength="99" />
+        </EntityType>
+        <EntityType Name="TRANGTHAINV_TBL">
+          <Key>
+            <PropertyRef Name="MATRANGTHAI" />
+          </Key>
+          <Property Name="MATRANGTHAI" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TENTRANGTHAI" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MOTA" Type="nvarchar" MaxLength="99" />
+        </EntityType>
+        <EntityType Name="TRANGTHAIPHONG_TBL">
+          <Key>
+            <PropertyRef Name="MATRANGTHAI" />
+          </Key>
+          <Property Name="MATRANGTHAI" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TENTRANGTHAI" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MOTA" Type="nvarchar" MaxLength="99" />
+        </EntityType>
+        <Association Name="FK_DATDICHVU_TBL_DICHVU_TBL">
+          <End Role="DICHVU_TBL" Type="Self.DICHVU_TBL" Multiplicity="1" />
+          <End Role="DATDICHVU_TBL" Type="Self.DATDICHVU_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DICHVU_TBL">
+              <PropertyRef Name="MADICHVU" />
+            </Principal>
+            <Dependent Role="DATDICHVU_TBL">
+              <PropertyRef Name="MADICHVU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DATDICHVU_TBL_HOADONDATDV_TBL">
+          <End Role="HOADONDATDV_TBL" Type="Self.HOADONDATDV_TBL" Multiplicity="1" />
+          <End Role="DATDICHVU_TBL" Type="Self.DATDICHVU_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HOADONDATDV_TBL">
+              <PropertyRef Name="MAHOADONDV" />
+            </Principal>
+            <Dependent Role="DATDICHVU_TBL">
+              <PropertyRef Name="MAHOADONDV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DATDICHVU_TBL_PHONGDAT_TBL">
+          <End Role="PHONGDAT_TBL" Type="Self.PHONGDAT_TBL" Multiplicity="1" />
+          <End Role="DATDICHVU_TBL" Type="Self.DATDICHVU_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PHONGDAT_TBL">
+              <PropertyRef Name="MAPHONGDAT" />
+            </Principal>
+            <Dependent Role="DATDICHVU_TBL">
+              <PropertyRef Name="MAPHONGDAT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DATDICHVU_TBL_TRANGTHAIDATDV_TBL">
+          <End Role="TRANGTHAIDATDV_TBL" Type="Self.TRANGTHAIDATDV_TBL" Multiplicity="1" />
+          <End Role="DATDICHVU_TBL" Type="Self.DATDICHVU_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANGTHAIDATDV_TBL">
+              <PropertyRef Name="MATRANGTHAI" />
+            </Principal>
+            <Dependent Role="DATDICHVU_TBL">
+              <PropertyRef Name="MATRANGTHAI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DICHVU_TBL_LOAIDV_TBL">
+          <End Role="LOAIDV_TBL" Type="Self.LOAIDV_TBL" Multiplicity="1" />
+          <End Role="DICHVU_TBL" Type="Self.DICHVU_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOAIDV_TBL">
+              <PropertyRef Name="MALOAIDV" />
+            </Principal>
+            <Dependent Role="DICHVU_TBL">
+              <PropertyRef Name="MALOAIDV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DICHVU_TBL_LOAIHINHDV_TBL">
+          <End Role="LOAIHINHDV_TBL" Type="Self.LOAIHINHDV_TBL" Multiplicity="1" />
+          <End Role="DICHVU_TBL" Type="Self.DICHVU_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOAIHINHDV_TBL">
+              <PropertyRef Name="MALOAIHINH" />
+            </Principal>
+            <Dependent Role="DICHVU_TBL">
+              <PropertyRef Name="MALOAIHINH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DICHVU_TBL_TRANGTHAIDV_TBL">
+          <End Role="TRANGTHAIDV_TBL" Type="Self.TRANGTHAIDV_TBL" Multiplicity="1" />
+          <End Role="DICHVU_TBL" Type="Self.DICHVU_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANGTHAIDV_TBL">
+              <PropertyRef Name="MATRANGTHAI" />
+            </Principal>
+            <Dependent Role="DICHVU_TBL">
+              <PropertyRef Name="MATRANGTHAI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HOADON_TBL_PHONGDAT_TBL">
+          <End Role="PHONGDAT_TBL" Type="Self.PHONGDAT_TBL" Multiplicity="1" />
+          <End Role="HOADONPHONG_TBL" Type="Self.HOADONPHONG_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PHONGDAT_TBL">
+              <PropertyRef Name="MAPHONGDAT" />
+            </Principal>
+            <Dependent Role="HOADONPHONG_TBL">
+              <PropertyRef Name="MAPHONGDAT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HOADON_TBL_TRANGTHAIHD_TBL">
+          <End Role="TRANGTHAIHD_TBL" Type="Self.TRANGTHAIHD_TBL" Multiplicity="1" />
+          <End Role="HOADONPHONG_TBL" Type="Self.HOADONPHONG_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANGTHAIHD_TBL">
+              <PropertyRef Name="MATRANGTHAI" />
+            </Principal>
+            <Dependent Role="HOADONPHONG_TBL">
+              <PropertyRef Name="MATRANGTHAI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HOADONDATDV_TBL_TRANGTHAIHD_TBL">
+          <End Role="TRANGTHAIHD_TBL" Type="Self.TRANGTHAIHD_TBL" Multiplicity="1" />
+          <End Role="HOADONDATDV_TBL" Type="Self.HOADONDATDV_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANGTHAIHD_TBL">
+              <PropertyRef Name="MATRANGTHAI" />
+            </Principal>
+            <Dependent Role="HOADONDATDV_TBL">
+              <PropertyRef Name="MATRANGTHAI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HOADONPHONG_TBL_PAYMENTTIME_TBL">
+          <End Role="PAYMENTTIME_TBL" Type="Self.PAYMENTTIME_TBL" Multiplicity="1" />
+          <End Role="HOADONPHONG_TBL" Type="Self.HOADONPHONG_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PAYMENTTIME_TBL">
+              <PropertyRef Name="MATHOIDIEM" />
+            </Principal>
+            <Dependent Role="HOADONPHONG_TBL">
+              <PropertyRef Name="MATHOIDIEM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KHACHHANG_TBL_GIOITINH_TBL">
+          <End Role="GIOITINH_TBL" Type="Self.GIOITINH_TBL" Multiplicity="1" />
+          <End Role="KHACHHANG_TBL" Type="Self.KHACHHANG_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GIOITINH_TBL">
+              <PropertyRef Name="MAGT" />
+            </Principal>
+            <Dependent Role="KHACHHANG_TBL">
+              <PropertyRef Name="MAGT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KHACHHANG_TBL_QUOCTICH_TBL">
+          <End Role="QUOCTICH_TBL" Type="Self.QUOCTICH_TBL" Multiplicity="1" />
+          <End Role="KHACHHANG_TBL" Type="Self.KHACHHANG_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QUOCTICH_TBL">
+              <PropertyRef Name="MAQT" />
+            </Principal>
+            <Dependent Role="KHACHHANG_TBL">
+              <PropertyRef Name="MAQT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NHANVIEN_TBL_GIOITINH_TBL">
+          <End Role="GIOITINH_TBL" Type="Self.GIOITINH_TBL" Multiplicity="1" />
+          <End Role="NHANVIEN_TBL" Type="Self.NHANVIEN_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GIOITINH_TBL">
+              <PropertyRef Name="MAGT" />
+            </Principal>
+            <Dependent Role="NHANVIEN_TBL">
+              <PropertyRef Name="MAGT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NHANVIEN_TBL_QUOCTICH_TBL">
+          <End Role="QUOCTICH_TBL" Type="Self.QUOCTICH_TBL" Multiplicity="1" />
+          <End Role="NHANVIEN_TBL" Type="Self.NHANVIEN_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QUOCTICH_TBL">
+              <PropertyRef Name="MAQT" />
+            </Principal>
+            <Dependent Role="NHANVIEN_TBL">
+              <PropertyRef Name="MAQT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NHANVIEN_TBL_TRANGTHAINV_TBL">
+          <End Role="TRANGTHAINV_TBL" Type="Self.TRANGTHAINV_TBL" Multiplicity="1" />
+          <End Role="NHANVIEN_TBL" Type="Self.NHANVIEN_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANGTHAINV_TBL">
+              <PropertyRef Name="MATRANGTHAI" />
+            </Principal>
+            <Dependent Role="NHANVIEN_TBL">
+              <PropertyRef Name="MATRANGTHAI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PHONG_TBL_TANG_TBL">
+          <End Role="TANGHOTEL_TBL" Type="Self.TANGHOTEL_TBL" Multiplicity="1" />
+          <End Role="PHONGNGHI_TBL" Type="Self.PHONGNGHI_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TANGHOTEL_TBL">
+              <PropertyRef Name="TANGTHU" />
+            </Principal>
+            <Dependent Role="PHONGNGHI_TBL">
+              <PropertyRef Name="TANGTHU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PHONG_TBL_TINHTRANGPHONG_TBL">
+          <End Role="TINHTRANGPHONG_TBL" Type="Self.TINHTRANGPHONG_TBL" Multiplicity="1" />
+          <End Role="PHONGNGHI_TBL" Type="Self.PHONGNGHI_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TINHTRANGPHONG_TBL">
+              <PropertyRef Name="MATINHTRANG" />
+            </Principal>
+            <Dependent Role="PHONGNGHI_TBL">
+              <PropertyRef Name="MATINHTRANG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PHONGDAT_TBL_KHACHHANG_TBL">
+          <End Role="KHACHHANG_TBL" Type="Self.KHACHHANG_TBL" Multiplicity="1" />
+          <End Role="PHONGDAT_TBL" Type="Self.PHONGDAT_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHACHHANG_TBL">
+              <PropertyRef Name="IDKHACH" />
+            </Principal>
+            <Dependent Role="PHONGDAT_TBL">
+              <PropertyRef Name="IDKHACH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PHONGDAT_TBL_LOAIHINHDP_TBL1">
+          <End Role="LOAIHINHDP_TBL" Type="Self.LOAIHINHDP_TBL" Multiplicity="1" />
+          <End Role="PHONGDAT_TBL" Type="Self.PHONGDAT_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOAIHINHDP_TBL">
+              <PropertyRef Name="MALOAIHINH" />
+            </Principal>
+            <Dependent Role="PHONGDAT_TBL">
+              <PropertyRef Name="MALOAIHINH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PHONGDAT_TBL_PHONGNGHI_TBL">
+          <End Role="PHONGNGHI_TBL" Type="Self.PHONGNGHI_TBL" Multiplicity="1" />
+          <End Role="PHONGDAT_TBL" Type="Self.PHONGDAT_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PHONGNGHI_TBL">
+              <PropertyRef Name="MAPHONG" />
+            </Principal>
+            <Dependent Role="PHONGDAT_TBL">
+              <PropertyRef Name="MAPHONG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PHONGDAT_TBL_TRANGTHAIDP_TBL1">
+          <End Role="TRANGTHAIDP_TBL" Type="Self.TRANGTHAIDP_TBL" Multiplicity="1" />
+          <End Role="PHONGDAT_TBL" Type="Self.PHONGDAT_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANGTHAIDP_TBL">
+              <PropertyRef Name="MATRANGTHAI" />
+            </Principal>
+            <Dependent Role="PHONGDAT_TBL">
+              <PropertyRef Name="MATRANGTHAI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PHONGNGHI_TBL_LOAIPHONG_TBL">
+          <End Role="LOAIPHONG_TBL" Type="Self.LOAIPHONG_TBL" Multiplicity="1" />
+          <End Role="PHONGNGHI_TBL" Type="Self.PHONGNGHI_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOAIPHONG_TBL">
+              <PropertyRef Name="MALOAIPHONG" />
+            </Principal>
+            <Dependent Role="PHONGNGHI_TBL">
+              <PropertyRef Name="MALOAIPHONG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PHONGNGHI_TBL_TRANGTHAIPHONG_TBL">
+          <End Role="TRANGTHAIPHONG_TBL" Type="Self.TRANGTHAIPHONG_TBL" Multiplicity="1" />
+          <End Role="PHONGNGHI_TBL" Type="Self.PHONGNGHI_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANGTHAIPHONG_TBL">
+              <PropertyRef Name="MATRANGTHAI" />
+            </Principal>
+            <Dependent Role="PHONGNGHI_TBL">
+              <PropertyRef Name="MATRANGTHAI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TAIKHOAN_TBL_NHANVIEN_TBL">
+          <End Role="NHANVIEN_TBL" Type="Self.NHANVIEN_TBL" Multiplicity="1" />
+          <End Role="TAIKHOAN_TBL" Type="Self.TAIKHOAN_TBL" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="NHANVIEN_TBL">
+              <PropertyRef Name="IDNV" />
+            </Principal>
+            <Dependent Role="TAIKHOAN_TBL">
+              <PropertyRef Name="IDNV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TAIKHOAN_TBL_VAITROCV_TBL">
+          <End Role="QUYENHAN_TBL" Type="Self.QUYENHAN_TBL" Multiplicity="1" />
+          <End Role="TAIKHOAN_TBL" Type="Self.TAIKHOAN_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QUYENHAN_TBL">
+              <PropertyRef Name="MAQH" />
+            </Principal>
+            <Dependent Role="TAIKHOAN_TBL">
+              <PropertyRef Name="MAQH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="QLKSModelStoreContainer">
+          <EntitySet Name="DATDICHVU_TBL" EntityType="Self.DATDICHVU_TBL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DICHVU_TBL" EntityType="Self.DICHVU_TBL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GIOITINH_TBL" EntityType="Self.GIOITINH_TBL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HOADONDATDV_TBL" EntityType="Self.HOADONDATDV_TBL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HOADONPHONG_TBL" EntityType="Self.HOADONPHONG_TBL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KHACHHANG_TBL" EntityType="Self.KHACHHANG_TBL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOAIDV_TBL" EntityType="Self.LOAIDV_TBL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOAIHINHDP_TBL" EntityType="Self.LOAIHINHDP_TBL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOAIHINHDV_TBL" EntityType="Self.LOAIHINHDV_TBL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOAIPHONG_TBL" EntityType="Self.LOAIPHONG_TBL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NHANVIEN_TBL" EntityType="Self.NHANVIEN_TBL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PAYMENTTIME_TBL" EntityType="Self.PAYMENTTIME_TBL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PHONGDAT_TBL" EntityType="Self.PHONGDAT_TBL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PHONGNGHI_TBL" EntityType="Self.PHONGNGHI_TBL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QUOCTICH_TBL" EntityType="Self.QUOCTICH_TBL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QUYENHAN_TBL" EntityType="Self.QUYENHAN_TBL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TAIKHOAN_TBL" EntityType="Self.TAIKHOAN_TBL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TANGHOTEL_TBL" EntityType="Self.TANGHOTEL_TBL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TINHTRANGPHONG_TBL" EntityType="Self.TINHTRANGPHONG_TBL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TRANGTHAIDATDV_TBL" EntityType="Self.TRANGTHAIDATDV_TBL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TRANGTHAIDP_TBL" EntityType="Self.TRANGTHAIDP_TBL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TRANGTHAIDV_TBL" EntityType="Self.TRANGTHAIDV_TBL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TRANGTHAIHD_TBL" EntityType="Self.TRANGTHAIHD_TBL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TRANGTHAINV_TBL" EntityType="Self.TRANGTHAINV_TBL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TRANGTHAIPHONG_TBL" EntityType="Self.TRANGTHAIPHONG_TBL" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_DATDICHVU_TBL_DICHVU_TBL" Association="Self.FK_DATDICHVU_TBL_DICHVU_TBL">
+            <End Role="DICHVU_TBL" EntitySet="DICHVU_TBL" />
+            <End Role="DATDICHVU_TBL" EntitySet="DATDICHVU_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DATDICHVU_TBL_HOADONDATDV_TBL" Association="Self.FK_DATDICHVU_TBL_HOADONDATDV_TBL">
+            <End Role="HOADONDATDV_TBL" EntitySet="HOADONDATDV_TBL" />
+            <End Role="DATDICHVU_TBL" EntitySet="DATDICHVU_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DATDICHVU_TBL_PHONGDAT_TBL" Association="Self.FK_DATDICHVU_TBL_PHONGDAT_TBL">
+            <End Role="PHONGDAT_TBL" EntitySet="PHONGDAT_TBL" />
+            <End Role="DATDICHVU_TBL" EntitySet="DATDICHVU_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DATDICHVU_TBL_TRANGTHAIDATDV_TBL" Association="Self.FK_DATDICHVU_TBL_TRANGTHAIDATDV_TBL">
+            <End Role="TRANGTHAIDATDV_TBL" EntitySet="TRANGTHAIDATDV_TBL" />
+            <End Role="DATDICHVU_TBL" EntitySet="DATDICHVU_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DICHVU_TBL_LOAIDV_TBL" Association="Self.FK_DICHVU_TBL_LOAIDV_TBL">
+            <End Role="LOAIDV_TBL" EntitySet="LOAIDV_TBL" />
+            <End Role="DICHVU_TBL" EntitySet="DICHVU_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DICHVU_TBL_LOAIHINHDV_TBL" Association="Self.FK_DICHVU_TBL_LOAIHINHDV_TBL">
+            <End Role="LOAIHINHDV_TBL" EntitySet="LOAIHINHDV_TBL" />
+            <End Role="DICHVU_TBL" EntitySet="DICHVU_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DICHVU_TBL_TRANGTHAIDV_TBL" Association="Self.FK_DICHVU_TBL_TRANGTHAIDV_TBL">
+            <End Role="TRANGTHAIDV_TBL" EntitySet="TRANGTHAIDV_TBL" />
+            <End Role="DICHVU_TBL" EntitySet="DICHVU_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HOADON_TBL_PHONGDAT_TBL" Association="Self.FK_HOADON_TBL_PHONGDAT_TBL">
+            <End Role="PHONGDAT_TBL" EntitySet="PHONGDAT_TBL" />
+            <End Role="HOADONPHONG_TBL" EntitySet="HOADONPHONG_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HOADON_TBL_TRANGTHAIHD_TBL" Association="Self.FK_HOADON_TBL_TRANGTHAIHD_TBL">
+            <End Role="TRANGTHAIHD_TBL" EntitySet="TRANGTHAIHD_TBL" />
+            <End Role="HOADONPHONG_TBL" EntitySet="HOADONPHONG_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HOADONDATDV_TBL_TRANGTHAIHD_TBL" Association="Self.FK_HOADONDATDV_TBL_TRANGTHAIHD_TBL">
+            <End Role="TRANGTHAIHD_TBL" EntitySet="TRANGTHAIHD_TBL" />
+            <End Role="HOADONDATDV_TBL" EntitySet="HOADONDATDV_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HOADONPHONG_TBL_PAYMENTTIME_TBL" Association="Self.FK_HOADONPHONG_TBL_PAYMENTTIME_TBL">
+            <End Role="PAYMENTTIME_TBL" EntitySet="PAYMENTTIME_TBL" />
+            <End Role="HOADONPHONG_TBL" EntitySet="HOADONPHONG_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KHACHHANG_TBL_GIOITINH_TBL" Association="Self.FK_KHACHHANG_TBL_GIOITINH_TBL">
+            <End Role="GIOITINH_TBL" EntitySet="GIOITINH_TBL" />
+            <End Role="KHACHHANG_TBL" EntitySet="KHACHHANG_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KHACHHANG_TBL_QUOCTICH_TBL" Association="Self.FK_KHACHHANG_TBL_QUOCTICH_TBL">
+            <End Role="QUOCTICH_TBL" EntitySet="QUOCTICH_TBL" />
+            <End Role="KHACHHANG_TBL" EntitySet="KHACHHANG_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NHANVIEN_TBL_GIOITINH_TBL" Association="Self.FK_NHANVIEN_TBL_GIOITINH_TBL">
+            <End Role="GIOITINH_TBL" EntitySet="GIOITINH_TBL" />
+            <End Role="NHANVIEN_TBL" EntitySet="NHANVIEN_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NHANVIEN_TBL_QUOCTICH_TBL" Association="Self.FK_NHANVIEN_TBL_QUOCTICH_TBL">
+            <End Role="QUOCTICH_TBL" EntitySet="QUOCTICH_TBL" />
+            <End Role="NHANVIEN_TBL" EntitySet="NHANVIEN_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NHANVIEN_TBL_TRANGTHAINV_TBL" Association="Self.FK_NHANVIEN_TBL_TRANGTHAINV_TBL">
+            <End Role="TRANGTHAINV_TBL" EntitySet="TRANGTHAINV_TBL" />
+            <End Role="NHANVIEN_TBL" EntitySet="NHANVIEN_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PHONG_TBL_TANG_TBL" Association="Self.FK_PHONG_TBL_TANG_TBL">
+            <End Role="TANGHOTEL_TBL" EntitySet="TANGHOTEL_TBL" />
+            <End Role="PHONGNGHI_TBL" EntitySet="PHONGNGHI_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PHONG_TBL_TINHTRANGPHONG_TBL" Association="Self.FK_PHONG_TBL_TINHTRANGPHONG_TBL">
+            <End Role="TINHTRANGPHONG_TBL" EntitySet="TINHTRANGPHONG_TBL" />
+            <End Role="PHONGNGHI_TBL" EntitySet="PHONGNGHI_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PHONGDAT_TBL_KHACHHANG_TBL" Association="Self.FK_PHONGDAT_TBL_KHACHHANG_TBL">
+            <End Role="KHACHHANG_TBL" EntitySet="KHACHHANG_TBL" />
+            <End Role="PHONGDAT_TBL" EntitySet="PHONGDAT_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PHONGDAT_TBL_LOAIHINHDP_TBL1" Association="Self.FK_PHONGDAT_TBL_LOAIHINHDP_TBL1">
+            <End Role="LOAIHINHDP_TBL" EntitySet="LOAIHINHDP_TBL" />
+            <End Role="PHONGDAT_TBL" EntitySet="PHONGDAT_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PHONGDAT_TBL_PHONGNGHI_TBL" Association="Self.FK_PHONGDAT_TBL_PHONGNGHI_TBL">
+            <End Role="PHONGNGHI_TBL" EntitySet="PHONGNGHI_TBL" />
+            <End Role="PHONGDAT_TBL" EntitySet="PHONGDAT_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PHONGDAT_TBL_TRANGTHAIDP_TBL1" Association="Self.FK_PHONGDAT_TBL_TRANGTHAIDP_TBL1">
+            <End Role="TRANGTHAIDP_TBL" EntitySet="TRANGTHAIDP_TBL" />
+            <End Role="PHONGDAT_TBL" EntitySet="PHONGDAT_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PHONGNGHI_TBL_LOAIPHONG_TBL" Association="Self.FK_PHONGNGHI_TBL_LOAIPHONG_TBL">
+            <End Role="LOAIPHONG_TBL" EntitySet="LOAIPHONG_TBL" />
+            <End Role="PHONGNGHI_TBL" EntitySet="PHONGNGHI_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PHONGNGHI_TBL_TRANGTHAIPHONG_TBL" Association="Self.FK_PHONGNGHI_TBL_TRANGTHAIPHONG_TBL">
+            <End Role="TRANGTHAIPHONG_TBL" EntitySet="TRANGTHAIPHONG_TBL" />
+            <End Role="PHONGNGHI_TBL" EntitySet="PHONGNGHI_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TAIKHOAN_TBL_NHANVIEN_TBL" Association="Self.FK_TAIKHOAN_TBL_NHANVIEN_TBL">
+            <End Role="NHANVIEN_TBL" EntitySet="NHANVIEN_TBL" />
+            <End Role="TAIKHOAN_TBL" EntitySet="TAIKHOAN_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TAIKHOAN_TBL_VAITROCV_TBL" Association="Self.FK_TAIKHOAN_TBL_VAITROCV_TBL">
+            <End Role="QUYENHAN_TBL" EntitySet="QUYENHAN_TBL" />
+            <End Role="TAIKHOAN_TBL" EntitySet="TAIKHOAN_TBL" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="QLKSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="QLKSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DATDICHVU_TBL" EntityType="QLKSModel.DATDICHVU_TBL" />
+          <EntitySet Name="DICHVU_TBL" EntityType="QLKSModel.DICHVU_TBL" />
+          <EntitySet Name="GIOITINH_TBL" EntityType="QLKSModel.GIOITINH_TBL" />
+          <EntitySet Name="HOADONDATDV_TBL" EntityType="QLKSModel.HOADONDATDV_TBL" />
+          <EntitySet Name="HOADONPHONG_TBL" EntityType="QLKSModel.HOADONPHONG_TBL" />
+          <EntitySet Name="KHACHHANG_TBL" EntityType="QLKSModel.KHACHHANG_TBL" />
+          <EntitySet Name="LOAIDV_TBL" EntityType="QLKSModel.LOAIDV_TBL" />
+          <EntitySet Name="LOAIHINHDP_TBL" EntityType="QLKSModel.LOAIHINHDP_TBL" />
+          <EntitySet Name="LOAIHINHDV_TBL" EntityType="QLKSModel.LOAIHINHDV_TBL" />
+          <EntitySet Name="LOAIPHONG_TBL" EntityType="QLKSModel.LOAIPHONG_TBL" />
+          <EntitySet Name="NHANVIEN_TBL" EntityType="QLKSModel.NHANVIEN_TBL" />
+          <EntitySet Name="PAYMENTTIME_TBL" EntityType="QLKSModel.PAYMENTTIME_TBL" />
+          <EntitySet Name="PHONGDAT_TBL" EntityType="QLKSModel.PHONGDAT_TBL" />
+          <EntitySet Name="PHONGNGHI_TBL" EntityType="QLKSModel.PHONGNGHI_TBL" />
+          <EntitySet Name="QUOCTICH_TBL" EntityType="QLKSModel.QUOCTICH_TBL" />
+          <EntitySet Name="TANGHOTEL_TBL" EntityType="QLKSModel.TANGHOTEL_TBL" />
+          <EntitySet Name="TINHTRANGPHONG_TBL" EntityType="QLKSModel.TINHTRANGPHONG_TBL" />
+          <EntitySet Name="TRANGTHAIDATDV_TBL" EntityType="QLKSModel.TRANGTHAIDATDV_TBL" />
+          <EntitySet Name="TRANGTHAIDP_TBL" EntityType="QLKSModel.TRANGTHAIDP_TBL" />
+          <EntitySet Name="TRANGTHAIDV_TBL" EntityType="QLKSModel.TRANGTHAIDV_TBL" />
+          <EntitySet Name="TRANGTHAIHD_TBL" EntityType="QLKSModel.TRANGTHAIHD_TBL" />
+          <EntitySet Name="TRANGTHAINV_TBL" EntityType="QLKSModel.TRANGTHAINV_TBL" />
+          <EntitySet Name="TRANGTHAIPHONG_TBL" EntityType="QLKSModel.TRANGTHAIPHONG_TBL" />
+          <AssociationSet Name="FK_DATDICHVU_TBL_DICHVU_TBL" Association="QLKSModel.FK_DATDICHVU_TBL_DICHVU_TBL">
+            <End Role="DICHVU_TBL" EntitySet="DICHVU_TBL" />
+            <End Role="DATDICHVU_TBL" EntitySet="DATDICHVU_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DATDICHVU_TBL_HOADONDATDV_TBL" Association="QLKSModel.FK_DATDICHVU_TBL_HOADONDATDV_TBL">
+            <End Role="HOADONDATDV_TBL" EntitySet="HOADONDATDV_TBL" />
+            <End Role="DATDICHVU_TBL" EntitySet="DATDICHVU_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DATDICHVU_TBL_PHONGDAT_TBL" Association="QLKSModel.FK_DATDICHVU_TBL_PHONGDAT_TBL">
+            <End Role="PHONGDAT_TBL" EntitySet="PHONGDAT_TBL" />
+            <End Role="DATDICHVU_TBL" EntitySet="DATDICHVU_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DATDICHVU_TBL_TRANGTHAIDATDV_TBL" Association="QLKSModel.FK_DATDICHVU_TBL_TRANGTHAIDATDV_TBL">
+            <End Role="TRANGTHAIDATDV_TBL" EntitySet="TRANGTHAIDATDV_TBL" />
+            <End Role="DATDICHVU_TBL" EntitySet="DATDICHVU_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DICHVU_TBL_LOAIDV_TBL" Association="QLKSModel.FK_DICHVU_TBL_LOAIDV_TBL">
+            <End Role="LOAIDV_TBL" EntitySet="LOAIDV_TBL" />
+            <End Role="DICHVU_TBL" EntitySet="DICHVU_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DICHVU_TBL_LOAIHINHDV_TBL" Association="QLKSModel.FK_DICHVU_TBL_LOAIHINHDV_TBL">
+            <End Role="LOAIHINHDV_TBL" EntitySet="LOAIHINHDV_TBL" />
+            <End Role="DICHVU_TBL" EntitySet="DICHVU_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DICHVU_TBL_TRANGTHAIDV_TBL" Association="QLKSModel.FK_DICHVU_TBL_TRANGTHAIDV_TBL">
+            <End Role="TRANGTHAIDV_TBL" EntitySet="TRANGTHAIDV_TBL" />
+            <End Role="DICHVU_TBL" EntitySet="DICHVU_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KHACHHANG_TBL_GIOITINH_TBL" Association="QLKSModel.FK_KHACHHANG_TBL_GIOITINH_TBL">
+            <End Role="GIOITINH_TBL" EntitySet="GIOITINH_TBL" />
+            <End Role="KHACHHANG_TBL" EntitySet="KHACHHANG_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NHANVIEN_TBL_GIOITINH_TBL" Association="QLKSModel.FK_NHANVIEN_TBL_GIOITINH_TBL">
+            <End Role="GIOITINH_TBL" EntitySet="GIOITINH_TBL" />
+            <End Role="NHANVIEN_TBL" EntitySet="NHANVIEN_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HOADONDATDV_TBL_TRANGTHAIHD_TBL" Association="QLKSModel.FK_HOADONDATDV_TBL_TRANGTHAIHD_TBL">
+            <End Role="TRANGTHAIHD_TBL" EntitySet="TRANGTHAIHD_TBL" />
+            <End Role="HOADONDATDV_TBL" EntitySet="HOADONDATDV_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HOADON_TBL_PHONGDAT_TBL" Association="QLKSModel.FK_HOADON_TBL_PHONGDAT_TBL">
+            <End Role="PHONGDAT_TBL" EntitySet="PHONGDAT_TBL" />
+            <End Role="HOADONPHONG_TBL" EntitySet="HOADONPHONG_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HOADON_TBL_TRANGTHAIHD_TBL" Association="QLKSModel.FK_HOADON_TBL_TRANGTHAIHD_TBL">
+            <End Role="TRANGTHAIHD_TBL" EntitySet="TRANGTHAIHD_TBL" />
+            <End Role="HOADONPHONG_TBL" EntitySet="HOADONPHONG_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HOADONPHONG_TBL_PAYMENTTIME_TBL" Association="QLKSModel.FK_HOADONPHONG_TBL_PAYMENTTIME_TBL">
+            <End Role="PAYMENTTIME_TBL" EntitySet="PAYMENTTIME_TBL" />
+            <End Role="HOADONPHONG_TBL" EntitySet="HOADONPHONG_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KHACHHANG_TBL_QUOCTICH_TBL" Association="QLKSModel.FK_KHACHHANG_TBL_QUOCTICH_TBL">
+            <End Role="QUOCTICH_TBL" EntitySet="QUOCTICH_TBL" />
+            <End Role="KHACHHANG_TBL" EntitySet="KHACHHANG_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PHONGDAT_TBL_KHACHHANG_TBL" Association="QLKSModel.FK_PHONGDAT_TBL_KHACHHANG_TBL">
+            <End Role="KHACHHANG_TBL" EntitySet="KHACHHANG_TBL" />
+            <End Role="PHONGDAT_TBL" EntitySet="PHONGDAT_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PHONGDAT_TBL_LOAIHINHDP_TBL1" Association="QLKSModel.FK_PHONGDAT_TBL_LOAIHINHDP_TBL1">
+            <End Role="LOAIHINHDP_TBL" EntitySet="LOAIHINHDP_TBL" />
+            <End Role="PHONGDAT_TBL" EntitySet="PHONGDAT_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PHONGNGHI_TBL_LOAIPHONG_TBL" Association="QLKSModel.FK_PHONGNGHI_TBL_LOAIPHONG_TBL">
+            <End Role="LOAIPHONG_TBL" EntitySet="LOAIPHONG_TBL" />
+            <End Role="PHONGNGHI_TBL" EntitySet="PHONGNGHI_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NHANVIEN_TBL_QUOCTICH_TBL" Association="QLKSModel.FK_NHANVIEN_TBL_QUOCTICH_TBL">
+            <End Role="QUOCTICH_TBL" EntitySet="QUOCTICH_TBL" />
+            <End Role="NHANVIEN_TBL" EntitySet="NHANVIEN_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NHANVIEN_TBL_TRANGTHAINV_TBL" Association="QLKSModel.FK_NHANVIEN_TBL_TRANGTHAINV_TBL">
+            <End Role="TRANGTHAINV_TBL" EntitySet="TRANGTHAINV_TBL" />
+            <End Role="NHANVIEN_TBL" EntitySet="NHANVIEN_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PHONGDAT_TBL_PHONGNGHI_TBL" Association="QLKSModel.FK_PHONGDAT_TBL_PHONGNGHI_TBL">
+            <End Role="PHONGNGHI_TBL" EntitySet="PHONGNGHI_TBL" />
+            <End Role="PHONGDAT_TBL" EntitySet="PHONGDAT_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PHONGDAT_TBL_TRANGTHAIDP_TBL1" Association="QLKSModel.FK_PHONGDAT_TBL_TRANGTHAIDP_TBL1">
+            <End Role="TRANGTHAIDP_TBL" EntitySet="TRANGTHAIDP_TBL" />
+            <End Role="PHONGDAT_TBL" EntitySet="PHONGDAT_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PHONG_TBL_TANG_TBL" Association="QLKSModel.FK_PHONG_TBL_TANG_TBL">
+            <End Role="TANGHOTEL_TBL" EntitySet="TANGHOTEL_TBL" />
+            <End Role="PHONGNGHI_TBL" EntitySet="PHONGNGHI_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PHONG_TBL_TINHTRANGPHONG_TBL" Association="QLKSModel.FK_PHONG_TBL_TINHTRANGPHONG_TBL">
+            <End Role="TINHTRANGPHONG_TBL" EntitySet="TINHTRANGPHONG_TBL" />
+            <End Role="PHONGNGHI_TBL" EntitySet="PHONGNGHI_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PHONGNGHI_TBL_TRANGTHAIPHONG_TBL" Association="QLKSModel.FK_PHONGNGHI_TBL_TRANGTHAIPHONG_TBL">
+            <End Role="TRANGTHAIPHONG_TBL" EntitySet="TRANGTHAIPHONG_TBL" />
+            <End Role="PHONGNGHI_TBL" EntitySet="PHONGNGHI_TBL" />
+          </AssociationSet>
+          <EntitySet Name="QUYENHAN_TBL" EntityType="QLKSModel.QUYENHAN_TBL" />
+          <EntitySet Name="TAIKHOAN_TBL" EntityType="QLKSModel.TAIKHOAN_TBL" />
+          <AssociationSet Name="FK_TAIKHOAN_TBL_NHANVIEN_TBL" Association="QLKSModel.FK_TAIKHOAN_TBL_NHANVIEN_TBL">
+            <End Role="NHANVIEN_TBL" EntitySet="NHANVIEN_TBL" />
+            <End Role="TAIKHOAN_TBL" EntitySet="TAIKHOAN_TBL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TAIKHOAN_TBL_VAITROCV_TBL" Association="QLKSModel.FK_TAIKHOAN_TBL_VAITROCV_TBL">
+            <End Role="QUYENHAN_TBL" EntitySet="QUYENHAN_TBL" />
+            <End Role="TAIKHOAN_TBL" EntitySet="TAIKHOAN_TBL" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="DATDICHVU_TBL">
+          <Key>
+            <PropertyRef Name="MADATDICHVU" />
+          </Key>
+          <Property Name="MADATDICHVU" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MADICHVU" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MAPHONGDAT" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SOLUONG" Type="Int32" Nullable="false" />
+          <Property Name="NGAYDAT" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="GIADICHVU" Type="Int32" Nullable="false" />
+          <Property Name="MATRANGTHAI" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MAHOADONDV" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DICHVU_TBL" Relationship="QLKSModel.FK_DATDICHVU_TBL_DICHVU_TBL" FromRole="DATDICHVU_TBL" ToRole="DICHVU_TBL" />
+          <NavigationProperty Name="HOADONDATDV_TBL" Relationship="QLKSModel.FK_DATDICHVU_TBL_HOADONDATDV_TBL" FromRole="DATDICHVU_TBL" ToRole="HOADONDATDV_TBL" />
+          <NavigationProperty Name="PHONGDAT_TBL" Relationship="QLKSModel.FK_DATDICHVU_TBL_PHONGDAT_TBL" FromRole="DATDICHVU_TBL" ToRole="PHONGDAT_TBL" />
+          <NavigationProperty Name="TRANGTHAIDATDV_TBL" Relationship="QLKSModel.FK_DATDICHVU_TBL_TRANGTHAIDATDV_TBL" FromRole="DATDICHVU_TBL" ToRole="TRANGTHAIDATDV_TBL" />
+        </EntityType>
+        <EntityType Name="DICHVU_TBL">
+          <Key>
+            <PropertyRef Name="MADICHVU" />
+          </Key>
+          <Property Name="MADICHVU" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TENDICHVU" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MALOAIDV" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GIADICHVU" Type="Int32" Nullable="false" />
+          <Property Name="MATRANGTHAI" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MOTA" Type="String" MaxLength="99" FixedLength="false" Unicode="true" />
+          <Property Name="MALOAIHINH" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DATDICHVU_TBL" Relationship="QLKSModel.FK_DATDICHVU_TBL_DICHVU_TBL" FromRole="DICHVU_TBL" ToRole="DATDICHVU_TBL" />
+          <NavigationProperty Name="LOAIDV_TBL" Relationship="QLKSModel.FK_DICHVU_TBL_LOAIDV_TBL" FromRole="DICHVU_TBL" ToRole="LOAIDV_TBL" />
+          <NavigationProperty Name="LOAIHINHDV_TBL" Relationship="QLKSModel.FK_DICHVU_TBL_LOAIHINHDV_TBL" FromRole="DICHVU_TBL" ToRole="LOAIHINHDV_TBL" />
+          <NavigationProperty Name="TRANGTHAIDV_TBL" Relationship="QLKSModel.FK_DICHVU_TBL_TRANGTHAIDV_TBL" FromRole="DICHVU_TBL" ToRole="TRANGTHAIDV_TBL" />
+        </EntityType>
+        <EntityType Name="GIOITINH_TBL">
+          <Key>
+            <PropertyRef Name="MAGT" />
+          </Key>
+          <Property Name="MAGT" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="GIOITINH" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="KHACHHANG_TBL" Relationship="QLKSModel.FK_KHACHHANG_TBL_GIOITINH_TBL" FromRole="GIOITINH_TBL" ToRole="KHACHHANG_TBL" />
+          <NavigationProperty Name="NHANVIEN_TBL" Relationship="QLKSModel.FK_NHANVIEN_TBL_GIOITINH_TBL" FromRole="GIOITINH_TBL" ToRole="NHANVIEN_TBL" />
+        </EntityType>
+        <EntityType Name="HOADONDATDV_TBL">
+          <Key>
+            <PropertyRef Name="MAHOADONDV" />
+          </Key>
+          <Property Name="MAHOADONDV" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MATRANGTHAI" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GIATRIBANDAU" Type="Int32" Nullable="false" />
+          <Property Name="GIAMGIA" Type="Int32" Nullable="false" />
+          <Property Name="GIATHANHTOAN" Type="Int32" Nullable="false" />
+          <Property Name="NGAYTHANHTOAN" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="DATDICHVU_TBL" Relationship="QLKSModel.FK_DATDICHVU_TBL_HOADONDATDV_TBL" FromRole="HOADONDATDV_TBL" ToRole="DATDICHVU_TBL" />
+          <NavigationProperty Name="TRANGTHAIHD_TBL" Relationship="QLKSModel.FK_HOADONDATDV_TBL_TRANGTHAIHD_TBL" FromRole="HOADONDATDV_TBL" ToRole="TRANGTHAIHD_TBL" />
+        </EntityType>
+        <EntityType Name="HOADONPHONG_TBL">
+          <Key>
+            <PropertyRef Name="MAHOADON" />
+          </Key>
+          <Property Name="MAHOADON" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MAPHONGDAT" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MATRANGTHAI" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NGAYTHANHTOAN" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MATHOIDIEM" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GIATRIBANDAU" Type="Int32" Nullable="false" />
+          <Property Name="GIAMGIA" Type="Int32" Nullable="false" />
+          <Property Name="GIATHANHTOAN" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PHONGDAT_TBL" Relationship="QLKSModel.FK_HOADON_TBL_PHONGDAT_TBL" FromRole="HOADONPHONG_TBL" ToRole="PHONGDAT_TBL" />
+          <NavigationProperty Name="TRANGTHAIHD_TBL" Relationship="QLKSModel.FK_HOADON_TBL_TRANGTHAIHD_TBL" FromRole="HOADONPHONG_TBL" ToRole="TRANGTHAIHD_TBL" />
+          <NavigationProperty Name="PAYMENTTIME_TBL" Relationship="QLKSModel.FK_HOADONPHONG_TBL_PAYMENTTIME_TBL" FromRole="HOADONPHONG_TBL" ToRole="PAYMENTTIME_TBL" />
+        </EntityType>
+        <EntityType Name="KHACHHANG_TBL">
+          <Key>
+            <PropertyRef Name="IDKHACH" />
+          </Key>
+          <Property Name="IDKHACH" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HOVATEN" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MAGT" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="SOLIENHE" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="QUEQUAN" Type="String" MaxLength="99" FixedLength="false" Unicode="true" />
+          <Property Name="MAQT" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="GIOITINH_TBL" Relationship="QLKSModel.FK_KHACHHANG_TBL_GIOITINH_TBL" FromRole="KHACHHANG_TBL" ToRole="GIOITINH_TBL" />
+          <NavigationProperty Name="QUOCTICH_TBL" Relationship="QLKSModel.FK_KHACHHANG_TBL_QUOCTICH_TBL" FromRole="KHACHHANG_TBL" ToRole="QUOCTICH_TBL" />
+          <NavigationProperty Name="PHONGDAT_TBL" Relationship="QLKSModel.FK_PHONGDAT_TBL_KHACHHANG_TBL" FromRole="KHACHHANG_TBL" ToRole="PHONGDAT_TBL" />
+        </EntityType>
+        <EntityType Name="LOAIDV_TBL">
+          <Key>
+            <PropertyRef Name="MALOAIDV" />
+          </Key>
+          <Property Name="MALOAIDV" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TENLOAIDV" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MOTA" Type="String" MaxLength="99" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DICHVU_TBL" Relationship="QLKSModel.FK_DICHVU_TBL_LOAIDV_TBL" FromRole="LOAIDV_TBL" ToRole="DICHVU_TBL" />
+        </EntityType>
+        <EntityType Name="LOAIHINHDP_TBL">
+          <Key>
+            <PropertyRef Name="MALOAIHINH" />
+          </Key>
+          <Property Name="MALOAIHINH" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TENLOAIHINH" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MOTA" Type="String" MaxLength="99" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PHONGDAT_TBL" Relationship="QLKSModel.FK_PHONGDAT_TBL_LOAIHINHDP_TBL1" FromRole="LOAIHINHDP_TBL" ToRole="PHONGDAT_TBL" />
+        </EntityType>
+        <EntityType Name="LOAIHINHDV_TBL">
+          <Key>
+            <PropertyRef Name="MALOAIHINH" />
+          </Key>
+          <Property Name="MALOAIHINH" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TENLOAIHINH" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MOTA" Type="String" MaxLength="99" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DICHVU_TBL" Relationship="QLKSModel.FK_DICHVU_TBL_LOAIHINHDV_TBL" FromRole="LOAIHINHDV_TBL" ToRole="DICHVU_TBL" />
+        </EntityType>
+        <EntityType Name="LOAIPHONG_TBL">
+          <Key>
+            <PropertyRef Name="MALOAIPHONG" />
+          </Key>
+          <Property Name="MALOAIPHONG" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TENLOAIPHONG" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SUCCHUA" Type="Int32" Nullable="false" />
+          <Property Name="SOGIUONG" Type="Int32" Nullable="false" />
+          <Property Name="TIENTHEOD" Type="Int32" Nullable="false" />
+          <Property Name="TIENTHEOH" Type="Int32" Nullable="false" />
+          <Property Name="MOTA" Type="String" MaxLength="99" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PHONGNGHI_TBL" Relationship="QLKSModel.FK_PHONGNGHI_TBL_LOAIPHONG_TBL" FromRole="LOAIPHONG_TBL" ToRole="PHONGNGHI_TBL" />
+        </EntityType>
+        <EntityType Name="NHANVIEN_TBL">
+          <Key>
+            <PropertyRef Name="IDNV" />
+          </Key>
+          <Property Name="IDNV" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HOVATEN" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HINHNEN" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="MAGT" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="SOLIENHE" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="QUEQUAN" Type="String" MaxLength="99" FixedLength="false" Unicode="true" />
+          <Property Name="MAQT" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="NGAYHIEULUC" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="MATRANGTHAI" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="GIOITINH_TBL" Relationship="QLKSModel.FK_NHANVIEN_TBL_GIOITINH_TBL" FromRole="NHANVIEN_TBL" ToRole="GIOITINH_TBL" />
+          <NavigationProperty Name="QUOCTICH_TBL" Relationship="QLKSModel.FK_NHANVIEN_TBL_QUOCTICH_TBL" FromRole="NHANVIEN_TBL" ToRole="QUOCTICH_TBL" />
+          <NavigationProperty Name="TRANGTHAINV_TBL" Relationship="QLKSModel.FK_NHANVIEN_TBL_TRANGTHAINV_TBL" FromRole="NHANVIEN_TBL" ToRole="TRANGTHAINV_TBL" />
+          <NavigationProperty Name="TAIKHOAN_TBL" Relationship="QLKSModel.FK_TAIKHOAN_TBL_NHANVIEN_TBL" FromRole="NHANVIEN_TBL" ToRole="TAIKHOAN_TBL" />
+        </EntityType>
+        <EntityType Name="PAYMENTTIME_TBL">
+          <Key>
+            <PropertyRef Name="MATHOIDIEM" />
+          </Key>
+          <Property Name="MATHOIDIEM" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TENTHOIDIEM" Type="String" Nullable="false" MaxLength="99" FixedLength="false" Unicode="true" />
+          <Property Name="MOTA" Type="String" MaxLength="99" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="HOADONPHONG_TBL" Relationship="QLKSModel.FK_HOADONPHONG_TBL_PAYMENTTIME_TBL" FromRole="PAYMENTTIME_TBL" ToRole="HOADONPHONG_TBL" />
+        </EntityType>
+        <EntityType Name="PHONGDAT_TBL">
+          <Key>
+            <PropertyRef Name="MAPHONGDAT" />
+          </Key>
+          <Property Name="MAPHONGDAT" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IDKHACH" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MAPHONG" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NGAYDAT" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="NGAYLAY" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="NGAYTRA" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="THOIHAN" Type="Decimal" Nullable="false" Precision="5" Scale="2" />
+          <Property Name="MALOAIHINH" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GIAPHONG" Type="Int32" Nullable="false" />
+          <Property Name="MATRANGTHAI" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GHICHU" Type="String" MaxLength="99" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DATDICHVU_TBL" Relationship="QLKSModel.FK_DATDICHVU_TBL_PHONGDAT_TBL" FromRole="PHONGDAT_TBL" ToRole="DATDICHVU_TBL" />
+          <NavigationProperty Name="HOADONPHONG_TBL" Relationship="QLKSModel.FK_HOADON_TBL_PHONGDAT_TBL" FromRole="PHONGDAT_TBL" ToRole="HOADONPHONG_TBL" />
+          <NavigationProperty Name="KHACHHANG_TBL" Relationship="QLKSModel.FK_PHONGDAT_TBL_KHACHHANG_TBL" FromRole="PHONGDAT_TBL" ToRole="KHACHHANG_TBL" />
+          <NavigationProperty Name="LOAIHINHDP_TBL" Relationship="QLKSModel.FK_PHONGDAT_TBL_LOAIHINHDP_TBL1" FromRole="PHONGDAT_TBL" ToRole="LOAIHINHDP_TBL" />
+          <NavigationProperty Name="PHONGNGHI_TBL" Relationship="QLKSModel.FK_PHONGDAT_TBL_PHONGNGHI_TBL" FromRole="PHONGDAT_TBL" ToRole="PHONGNGHI_TBL" />
+          <NavigationProperty Name="TRANGTHAIDP_TBL" Relationship="QLKSModel.FK_PHONGDAT_TBL_TRANGTHAIDP_TBL1" FromRole="PHONGDAT_TBL" ToRole="TRANGTHAIDP_TBL" />
+        </EntityType>
+        <EntityType Name="PHONGNGHI_TBL">
+          <Key>
+            <PropertyRef Name="MAPHONG" />
+          </Key>
+          <Property Name="MAPHONG" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TENPHONG" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TANGTHU" Type="Int32" Nullable="false" />
+          <Property Name="MALOAIPHONG" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MATINHTRANG" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MATRANGTHAI" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="LOAIPHONG_TBL" Relationship="QLKSModel.FK_PHONGNGHI_TBL_LOAIPHONG_TBL" FromRole="PHONGNGHI_TBL" ToRole="LOAIPHONG_TBL" />
+          <NavigationProperty Name="PHONGDAT_TBL" Relationship="QLKSModel.FK_PHONGDAT_TBL_PHONGNGHI_TBL" FromRole="PHONGNGHI_TBL" ToRole="PHONGDAT_TBL" />
+          <NavigationProperty Name="TANGHOTEL_TBL" Relationship="QLKSModel.FK_PHONG_TBL_TANG_TBL" FromRole="PHONGNGHI_TBL" ToRole="TANGHOTEL_TBL" />
+          <NavigationProperty Name="TINHTRANGPHONG_TBL" Relationship="QLKSModel.FK_PHONG_TBL_TINHTRANGPHONG_TBL" FromRole="PHONGNGHI_TBL" ToRole="TINHTRANGPHONG_TBL" />
+          <NavigationProperty Name="TRANGTHAIPHONG_TBL" Relationship="QLKSModel.FK_PHONGNGHI_TBL_TRANGTHAIPHONG_TBL" FromRole="PHONGNGHI_TBL" ToRole="TRANGTHAIPHONG_TBL" />
+        </EntityType>
+        <EntityType Name="QUOCTICH_TBL">
+          <Key>
+            <PropertyRef Name="MAQT" />
+          </Key>
+          <Property Name="MAQT" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="QUOCTICH" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="KHACHHANG_TBL" Relationship="QLKSModel.FK_KHACHHANG_TBL_QUOCTICH_TBL" FromRole="QUOCTICH_TBL" ToRole="KHACHHANG_TBL" />
+          <NavigationProperty Name="NHANVIEN_TBL" Relationship="QLKSModel.FK_NHANVIEN_TBL_QUOCTICH_TBL" FromRole="QUOCTICH_TBL" ToRole="NHANVIEN_TBL" />
+        </EntityType>
+        <EntityType Name="TANGHOTEL_TBL">
+          <Key>
+            <PropertyRef Name="TANGTHU" />
+          </Key>
+          <Property Name="TANGTHU" Type="Int32" Nullable="false" />
+          <Property Name="TENTANG" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PHONGNGHI_TBL" Relationship="QLKSModel.FK_PHONG_TBL_TANG_TBL" FromRole="TANGHOTEL_TBL" ToRole="PHONGNGHI_TBL" />
+        </EntityType>
+        <EntityType Name="TINHTRANGPHONG_TBL">
+          <Key>
+            <PropertyRef Name="MATINHTRANG" />
+          </Key>
+          <Property Name="MATINHTRANG" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TENTINHTRANG" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MOTA" Type="String" MaxLength="99" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PHONGNGHI_TBL" Relationship="QLKSModel.FK_PHONG_TBL_TINHTRANGPHONG_TBL" FromRole="TINHTRANGPHONG_TBL" ToRole="PHONGNGHI_TBL" />
+        </EntityType>
+        <EntityType Name="TRANGTHAIDATDV_TBL">
+          <Key>
+            <PropertyRef Name="MATRANGTHAI" />
+          </Key>
+          <Property Name="MATRANGTHAI" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TENTRANGTHAI" Type="String" Nullable="false" MaxLength="99" FixedLength="false" Unicode="true" />
+          <Property Name="MOTA" Type="String" MaxLength="99" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DATDICHVU_TBL" Relationship="QLKSModel.FK_DATDICHVU_TBL_TRANGTHAIDATDV_TBL" FromRole="TRANGTHAIDATDV_TBL" ToRole="DATDICHVU_TBL" />
+        </EntityType>
+        <EntityType Name="TRANGTHAIDP_TBL">
+          <Key>
+            <PropertyRef Name="MATRANGTHAI" />
+          </Key>
+          <Property Name="MATRANGTHAI" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TENTRANGTHAI" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MOTA" Type="String" MaxLength="99" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PHONGDAT_TBL" Relationship="QLKSModel.FK_PHONGDAT_TBL_TRANGTHAIDP_TBL1" FromRole="TRANGTHAIDP_TBL" ToRole="PHONGDAT_TBL" />
+        </EntityType>
+        <EntityType Name="TRANGTHAIDV_TBL">
+          <Key>
+            <PropertyRef Name="MATRANGTHAI" />
+          </Key>
+          <Property Name="MATRANGTHAI" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TENTRANGTHAI" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MOTA" Type="String" MaxLength="99" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DICHVU_TBL" Relationship="QLKSModel.FK_DICHVU_TBL_TRANGTHAIDV_TBL" FromRole="TRANGTHAIDV_TBL" ToRole="DICHVU_TBL" />
+        </EntityType>
+        <EntityType Name="TRANGTHAIHD_TBL">
+          <Key>
+            <PropertyRef Name="MATRANGTHAI" />
+          </Key>
+          <Property Name="MATRANGTHAI" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TENTRANGTHAI" Type="String" Nullable="false" MaxLength="99" FixedLength="false" Unicode="true" />
+          <Property Name="MOTA" Type="String" MaxLength="99" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="HOADONDATDV_TBL" Relationship="QLKSModel.FK_HOADONDATDV_TBL_TRANGTHAIHD_TBL" FromRole="TRANGTHAIHD_TBL" ToRole="HOADONDATDV_TBL" />
+          <NavigationProperty Name="HOADONPHONG_TBL" Relationship="QLKSModel.FK_HOADON_TBL_TRANGTHAIHD_TBL" FromRole="TRANGTHAIHD_TBL" ToRole="HOADONPHONG_TBL" />
+        </EntityType>
+        <EntityType Name="TRANGTHAINV_TBL">
+          <Key>
+            <PropertyRef Name="MATRANGTHAI" />
+          </Key>
+          <Property Name="MATRANGTHAI" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TENTRANGTHAI" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MOTA" Type="String" MaxLength="99" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="NHANVIEN_TBL" Relationship="QLKSModel.FK_NHANVIEN_TBL_TRANGTHAINV_TBL" FromRole="TRANGTHAINV_TBL" ToRole="NHANVIEN_TBL" />
+        </EntityType>
+        <EntityType Name="TRANGTHAIPHONG_TBL">
+          <Key>
+            <PropertyRef Name="MATRANGTHAI" />
+          </Key>
+          <Property Name="MATRANGTHAI" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TENTRANGTHAI" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MOTA" Type="String" MaxLength="99" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PHONGNGHI_TBL" Relationship="QLKSModel.FK_PHONGNGHI_TBL_TRANGTHAIPHONG_TBL" FromRole="TRANGTHAIPHONG_TBL" ToRole="PHONGNGHI_TBL" />
+        </EntityType>
+        <Association Name="FK_DATDICHVU_TBL_DICHVU_TBL">
+          <End Type="QLKSModel.DICHVU_TBL" Role="DICHVU_TBL" Multiplicity="1" />
+          <End Type="QLKSModel.DATDICHVU_TBL" Role="DATDICHVU_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DICHVU_TBL">
+              <PropertyRef Name="MADICHVU" />
+            </Principal>
+            <Dependent Role="DATDICHVU_TBL">
+              <PropertyRef Name="MADICHVU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DATDICHVU_TBL_HOADONDATDV_TBL">
+          <End Type="QLKSModel.HOADONDATDV_TBL" Role="HOADONDATDV_TBL" Multiplicity="1" />
+          <End Type="QLKSModel.DATDICHVU_TBL" Role="DATDICHVU_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HOADONDATDV_TBL">
+              <PropertyRef Name="MAHOADONDV" />
+            </Principal>
+            <Dependent Role="DATDICHVU_TBL">
+              <PropertyRef Name="MAHOADONDV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DATDICHVU_TBL_PHONGDAT_TBL">
+          <End Type="QLKSModel.PHONGDAT_TBL" Role="PHONGDAT_TBL" Multiplicity="1" />
+          <End Type="QLKSModel.DATDICHVU_TBL" Role="DATDICHVU_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PHONGDAT_TBL">
+              <PropertyRef Name="MAPHONGDAT" />
+            </Principal>
+            <Dependent Role="DATDICHVU_TBL">
+              <PropertyRef Name="MAPHONGDAT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DATDICHVU_TBL_TRANGTHAIDATDV_TBL">
+          <End Type="QLKSModel.TRANGTHAIDATDV_TBL" Role="TRANGTHAIDATDV_TBL" Multiplicity="1" />
+          <End Type="QLKSModel.DATDICHVU_TBL" Role="DATDICHVU_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANGTHAIDATDV_TBL">
+              <PropertyRef Name="MATRANGTHAI" />
+            </Principal>
+            <Dependent Role="DATDICHVU_TBL">
+              <PropertyRef Name="MATRANGTHAI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DICHVU_TBL_LOAIDV_TBL">
+          <End Type="QLKSModel.LOAIDV_TBL" Role="LOAIDV_TBL" Multiplicity="1" />
+          <End Type="QLKSModel.DICHVU_TBL" Role="DICHVU_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOAIDV_TBL">
+              <PropertyRef Name="MALOAIDV" />
+            </Principal>
+            <Dependent Role="DICHVU_TBL">
+              <PropertyRef Name="MALOAIDV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DICHVU_TBL_LOAIHINHDV_TBL">
+          <End Type="QLKSModel.LOAIHINHDV_TBL" Role="LOAIHINHDV_TBL" Multiplicity="1" />
+          <End Type="QLKSModel.DICHVU_TBL" Role="DICHVU_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOAIHINHDV_TBL">
+              <PropertyRef Name="MALOAIHINH" />
+            </Principal>
+            <Dependent Role="DICHVU_TBL">
+              <PropertyRef Name="MALOAIHINH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DICHVU_TBL_TRANGTHAIDV_TBL">
+          <End Type="QLKSModel.TRANGTHAIDV_TBL" Role="TRANGTHAIDV_TBL" Multiplicity="1" />
+          <End Type="QLKSModel.DICHVU_TBL" Role="DICHVU_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANGTHAIDV_TBL">
+              <PropertyRef Name="MATRANGTHAI" />
+            </Principal>
+            <Dependent Role="DICHVU_TBL">
+              <PropertyRef Name="MATRANGTHAI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KHACHHANG_TBL_GIOITINH_TBL">
+          <End Type="QLKSModel.GIOITINH_TBL" Role="GIOITINH_TBL" Multiplicity="1" />
+          <End Type="QLKSModel.KHACHHANG_TBL" Role="KHACHHANG_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GIOITINH_TBL">
+              <PropertyRef Name="MAGT" />
+            </Principal>
+            <Dependent Role="KHACHHANG_TBL">
+              <PropertyRef Name="MAGT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NHANVIEN_TBL_GIOITINH_TBL">
+          <End Type="QLKSModel.GIOITINH_TBL" Role="GIOITINH_TBL" Multiplicity="1" />
+          <End Type="QLKSModel.NHANVIEN_TBL" Role="NHANVIEN_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GIOITINH_TBL">
+              <PropertyRef Name="MAGT" />
+            </Principal>
+            <Dependent Role="NHANVIEN_TBL">
+              <PropertyRef Name="MAGT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HOADONDATDV_TBL_TRANGTHAIHD_TBL">
+          <End Type="QLKSModel.TRANGTHAIHD_TBL" Role="TRANGTHAIHD_TBL" Multiplicity="1" />
+          <End Type="QLKSModel.HOADONDATDV_TBL" Role="HOADONDATDV_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANGTHAIHD_TBL">
+              <PropertyRef Name="MATRANGTHAI" />
+            </Principal>
+            <Dependent Role="HOADONDATDV_TBL">
+              <PropertyRef Name="MATRANGTHAI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HOADON_TBL_PHONGDAT_TBL">
+          <End Type="QLKSModel.PHONGDAT_TBL" Role="PHONGDAT_TBL" Multiplicity="1" />
+          <End Type="QLKSModel.HOADONPHONG_TBL" Role="HOADONPHONG_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PHONGDAT_TBL">
+              <PropertyRef Name="MAPHONGDAT" />
+            </Principal>
+            <Dependent Role="HOADONPHONG_TBL">
+              <PropertyRef Name="MAPHONGDAT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HOADON_TBL_TRANGTHAIHD_TBL">
+          <End Type="QLKSModel.TRANGTHAIHD_TBL" Role="TRANGTHAIHD_TBL" Multiplicity="1" />
+          <End Type="QLKSModel.HOADONPHONG_TBL" Role="HOADONPHONG_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANGTHAIHD_TBL">
+              <PropertyRef Name="MATRANGTHAI" />
+            </Principal>
+            <Dependent Role="HOADONPHONG_TBL">
+              <PropertyRef Name="MATRANGTHAI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HOADONPHONG_TBL_PAYMENTTIME_TBL">
+          <End Type="QLKSModel.PAYMENTTIME_TBL" Role="PAYMENTTIME_TBL" Multiplicity="1" />
+          <End Type="QLKSModel.HOADONPHONG_TBL" Role="HOADONPHONG_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PAYMENTTIME_TBL">
+              <PropertyRef Name="MATHOIDIEM" />
+            </Principal>
+            <Dependent Role="HOADONPHONG_TBL">
+              <PropertyRef Name="MATHOIDIEM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KHACHHANG_TBL_QUOCTICH_TBL">
+          <End Type="QLKSModel.QUOCTICH_TBL" Role="QUOCTICH_TBL" Multiplicity="1" />
+          <End Type="QLKSModel.KHACHHANG_TBL" Role="KHACHHANG_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QUOCTICH_TBL">
+              <PropertyRef Name="MAQT" />
+            </Principal>
+            <Dependent Role="KHACHHANG_TBL">
+              <PropertyRef Name="MAQT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PHONGDAT_TBL_KHACHHANG_TBL">
+          <End Type="QLKSModel.KHACHHANG_TBL" Role="KHACHHANG_TBL" Multiplicity="1" />
+          <End Type="QLKSModel.PHONGDAT_TBL" Role="PHONGDAT_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHACHHANG_TBL">
+              <PropertyRef Name="IDKHACH" />
+            </Principal>
+            <Dependent Role="PHONGDAT_TBL">
+              <PropertyRef Name="IDKHACH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PHONGDAT_TBL_LOAIHINHDP_TBL1">
+          <End Type="QLKSModel.LOAIHINHDP_TBL" Role="LOAIHINHDP_TBL" Multiplicity="1" />
+          <End Type="QLKSModel.PHONGDAT_TBL" Role="PHONGDAT_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOAIHINHDP_TBL">
+              <PropertyRef Name="MALOAIHINH" />
+            </Principal>
+            <Dependent Role="PHONGDAT_TBL">
+              <PropertyRef Name="MALOAIHINH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PHONGNGHI_TBL_LOAIPHONG_TBL">
+          <End Type="QLKSModel.LOAIPHONG_TBL" Role="LOAIPHONG_TBL" Multiplicity="1" />
+          <End Type="QLKSModel.PHONGNGHI_TBL" Role="PHONGNGHI_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOAIPHONG_TBL">
+              <PropertyRef Name="MALOAIPHONG" />
+            </Principal>
+            <Dependent Role="PHONGNGHI_TBL">
+              <PropertyRef Name="MALOAIPHONG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NHANVIEN_TBL_QUOCTICH_TBL">
+          <End Type="QLKSModel.QUOCTICH_TBL" Role="QUOCTICH_TBL" Multiplicity="1" />
+          <End Type="QLKSModel.NHANVIEN_TBL" Role="NHANVIEN_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QUOCTICH_TBL">
+              <PropertyRef Name="MAQT" />
+            </Principal>
+            <Dependent Role="NHANVIEN_TBL">
+              <PropertyRef Name="MAQT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NHANVIEN_TBL_TRANGTHAINV_TBL">
+          <End Type="QLKSModel.TRANGTHAINV_TBL" Role="TRANGTHAINV_TBL" Multiplicity="1" />
+          <End Type="QLKSModel.NHANVIEN_TBL" Role="NHANVIEN_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANGTHAINV_TBL">
+              <PropertyRef Name="MATRANGTHAI" />
+            </Principal>
+            <Dependent Role="NHANVIEN_TBL">
+              <PropertyRef Name="MATRANGTHAI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PHONGDAT_TBL_PHONGNGHI_TBL">
+          <End Type="QLKSModel.PHONGNGHI_TBL" Role="PHONGNGHI_TBL" Multiplicity="1" />
+          <End Type="QLKSModel.PHONGDAT_TBL" Role="PHONGDAT_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PHONGNGHI_TBL">
+              <PropertyRef Name="MAPHONG" />
+            </Principal>
+            <Dependent Role="PHONGDAT_TBL">
+              <PropertyRef Name="MAPHONG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PHONGDAT_TBL_TRANGTHAIDP_TBL1">
+          <End Type="QLKSModel.TRANGTHAIDP_TBL" Role="TRANGTHAIDP_TBL" Multiplicity="1" />
+          <End Type="QLKSModel.PHONGDAT_TBL" Role="PHONGDAT_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANGTHAIDP_TBL">
+              <PropertyRef Name="MATRANGTHAI" />
+            </Principal>
+            <Dependent Role="PHONGDAT_TBL">
+              <PropertyRef Name="MATRANGTHAI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PHONG_TBL_TANG_TBL">
+          <End Type="QLKSModel.TANGHOTEL_TBL" Role="TANGHOTEL_TBL" Multiplicity="1" />
+          <End Type="QLKSModel.PHONGNGHI_TBL" Role="PHONGNGHI_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TANGHOTEL_TBL">
+              <PropertyRef Name="TANGTHU" />
+            </Principal>
+            <Dependent Role="PHONGNGHI_TBL">
+              <PropertyRef Name="TANGTHU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PHONG_TBL_TINHTRANGPHONG_TBL">
+          <End Type="QLKSModel.TINHTRANGPHONG_TBL" Role="TINHTRANGPHONG_TBL" Multiplicity="1" />
+          <End Type="QLKSModel.PHONGNGHI_TBL" Role="PHONGNGHI_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TINHTRANGPHONG_TBL">
+              <PropertyRef Name="MATINHTRANG" />
+            </Principal>
+            <Dependent Role="PHONGNGHI_TBL">
+              <PropertyRef Name="MATINHTRANG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PHONGNGHI_TBL_TRANGTHAIPHONG_TBL">
+          <End Type="QLKSModel.TRANGTHAIPHONG_TBL" Role="TRANGTHAIPHONG_TBL" Multiplicity="1" />
+          <End Type="QLKSModel.PHONGNGHI_TBL" Role="PHONGNGHI_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANGTHAIPHONG_TBL">
+              <PropertyRef Name="MATRANGTHAI" />
+            </Principal>
+            <Dependent Role="PHONGNGHI_TBL">
+              <PropertyRef Name="MATRANGTHAI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="QUYENHAN_TBL">
+          <Key>
+            <PropertyRef Name="MAQH" />
+          </Key>
+          <Property Name="MAQH" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ROLE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MOTA" Type="String" MaxLength="99" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TAIKHOAN_TBL" Relationship="QLKSModel.FK_TAIKHOAN_TBL_VAITROCV_TBL" FromRole="QUYENHAN_TBL" ToRole="TAIKHOAN_TBL" />
+        </EntityType>
+        <EntityType Name="TAIKHOAN_TBL">
+          <Key>
+            <PropertyRef Name="IDNV" />
+          </Key>
+          <Property Name="IDNV" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PASSWORD" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MAQH" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="NHANVIEN_TBL" Relationship="QLKSModel.FK_TAIKHOAN_TBL_NHANVIEN_TBL" FromRole="TAIKHOAN_TBL" ToRole="NHANVIEN_TBL" />
+          <NavigationProperty Name="QUYENHAN_TBL" Relationship="QLKSModel.FK_TAIKHOAN_TBL_VAITROCV_TBL" FromRole="TAIKHOAN_TBL" ToRole="QUYENHAN_TBL" />
+        </EntityType>
+        <Association Name="FK_TAIKHOAN_TBL_NHANVIEN_TBL">
+          <End Type="QLKSModel.NHANVIEN_TBL" Role="NHANVIEN_TBL" Multiplicity="1" />
+          <End Type="QLKSModel.TAIKHOAN_TBL" Role="TAIKHOAN_TBL" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="NHANVIEN_TBL">
+              <PropertyRef Name="IDNV" />
+            </Principal>
+            <Dependent Role="TAIKHOAN_TBL">
+              <PropertyRef Name="IDNV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TAIKHOAN_TBL_VAITROCV_TBL">
+          <End Type="QLKSModel.QUYENHAN_TBL" Role="QUYENHAN_TBL" Multiplicity="1" />
+          <End Type="QLKSModel.TAIKHOAN_TBL" Role="TAIKHOAN_TBL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QUYENHAN_TBL">
+              <PropertyRef Name="MAQH" />
+            </Principal>
+            <Dependent Role="TAIKHOAN_TBL">
+              <PropertyRef Name="MAQH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="QLKSModelStoreContainer" CdmEntityContainer="QLKSEntities">
+          <EntitySetMapping Name="DATDICHVU_TBL">
+            <EntityTypeMapping TypeName="QLKSModel.DATDICHVU_TBL">
+              <MappingFragment StoreEntitySet="DATDICHVU_TBL">
+                <ScalarProperty Name="MAHOADONDV" ColumnName="MAHOADONDV" />
+                <ScalarProperty Name="MATRANGTHAI" ColumnName="MATRANGTHAI" />
+                <ScalarProperty Name="GIADICHVU" ColumnName="GIADICHVU" />
+                <ScalarProperty Name="NGAYDAT" ColumnName="NGAYDAT" />
+                <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
+                <ScalarProperty Name="MAPHONGDAT" ColumnName="MAPHONGDAT" />
+                <ScalarProperty Name="MADICHVU" ColumnName="MADICHVU" />
+                <ScalarProperty Name="MADATDICHVU" ColumnName="MADATDICHVU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DICHVU_TBL">
+            <EntityTypeMapping TypeName="QLKSModel.DICHVU_TBL">
+              <MappingFragment StoreEntitySet="DICHVU_TBL">
+                <ScalarProperty Name="MALOAIHINH" ColumnName="MALOAIHINH" />
+                <ScalarProperty Name="MOTA" ColumnName="MOTA" />
+                <ScalarProperty Name="MATRANGTHAI" ColumnName="MATRANGTHAI" />
+                <ScalarProperty Name="GIADICHVU" ColumnName="GIADICHVU" />
+                <ScalarProperty Name="MALOAIDV" ColumnName="MALOAIDV" />
+                <ScalarProperty Name="TENDICHVU" ColumnName="TENDICHVU" />
+                <ScalarProperty Name="MADICHVU" ColumnName="MADICHVU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GIOITINH_TBL">
+            <EntityTypeMapping TypeName="QLKSModel.GIOITINH_TBL">
+              <MappingFragment StoreEntitySet="GIOITINH_TBL">
+                <ScalarProperty Name="GIOITINH" ColumnName="GIOITINH" />
+                <ScalarProperty Name="MAGT" ColumnName="MAGT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HOADONDATDV_TBL">
+            <EntityTypeMapping TypeName="QLKSModel.HOADONDATDV_TBL">
+              <MappingFragment StoreEntitySet="HOADONDATDV_TBL">
+                <ScalarProperty Name="NGAYTHANHTOAN" ColumnName="NGAYTHANHTOAN" />
+                <ScalarProperty Name="GIATHANHTOAN" ColumnName="GIATHANHTOAN" />
+                <ScalarProperty Name="GIAMGIA" ColumnName="GIAMGIA" />
+                <ScalarProperty Name="GIATRIBANDAU" ColumnName="GIATRIBANDAU" />
+                <ScalarProperty Name="MATRANGTHAI" ColumnName="MATRANGTHAI" />
+                <ScalarProperty Name="MAHOADONDV" ColumnName="MAHOADONDV" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HOADONPHONG_TBL">
+            <EntityTypeMapping TypeName="QLKSModel.HOADONPHONG_TBL">
+              <MappingFragment StoreEntitySet="HOADONPHONG_TBL">
+                <ScalarProperty Name="GIATHANHTOAN" ColumnName="GIATHANHTOAN" />
+                <ScalarProperty Name="GIAMGIA" ColumnName="GIAMGIA" />
+                <ScalarProperty Name="GIATRIBANDAU" ColumnName="GIATRIBANDAU" />
+                <ScalarProperty Name="MATHOIDIEM" ColumnName="MATHOIDIEM" />
+                <ScalarProperty Name="NGAYTHANHTOAN" ColumnName="NGAYTHANHTOAN" />
+                <ScalarProperty Name="MATRANGTHAI" ColumnName="MATRANGTHAI" />
+                <ScalarProperty Name="MAPHONGDAT" ColumnName="MAPHONGDAT" />
+                <ScalarProperty Name="MAHOADON" ColumnName="MAHOADON" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KHACHHANG_TBL">
+            <EntityTypeMapping TypeName="QLKSModel.KHACHHANG_TBL">
+              <MappingFragment StoreEntitySet="KHACHHANG_TBL">
+                <ScalarProperty Name="MAQT" ColumnName="MAQT" />
+                <ScalarProperty Name="QUEQUAN" ColumnName="QUEQUAN" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="SOLIENHE" ColumnName="SOLIENHE" />
+                <ScalarProperty Name="MAGT" ColumnName="MAGT" />
+                <ScalarProperty Name="HOVATEN" ColumnName="HOVATEN" />
+                <ScalarProperty Name="IDKHACH" ColumnName="IDKHACH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOAIDV_TBL">
+            <EntityTypeMapping TypeName="QLKSModel.LOAIDV_TBL">
+              <MappingFragment StoreEntitySet="LOAIDV_TBL">
+                <ScalarProperty Name="MOTA" ColumnName="MOTA" />
+                <ScalarProperty Name="TENLOAIDV" ColumnName="TENLOAIDV" />
+                <ScalarProperty Name="MALOAIDV" ColumnName="MALOAIDV" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOAIHINHDP_TBL">
+            <EntityTypeMapping TypeName="QLKSModel.LOAIHINHDP_TBL">
+              <MappingFragment StoreEntitySet="LOAIHINHDP_TBL">
+                <ScalarProperty Name="MOTA" ColumnName="MOTA" />
+                <ScalarProperty Name="TENLOAIHINH" ColumnName="TENLOAIHINH" />
+                <ScalarProperty Name="MALOAIHINH" ColumnName="MALOAIHINH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOAIHINHDV_TBL">
+            <EntityTypeMapping TypeName="QLKSModel.LOAIHINHDV_TBL">
+              <MappingFragment StoreEntitySet="LOAIHINHDV_TBL">
+                <ScalarProperty Name="MOTA" ColumnName="MOTA" />
+                <ScalarProperty Name="TENLOAIHINH" ColumnName="TENLOAIHINH" />
+                <ScalarProperty Name="MALOAIHINH" ColumnName="MALOAIHINH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOAIPHONG_TBL">
+            <EntityTypeMapping TypeName="QLKSModel.LOAIPHONG_TBL">
+              <MappingFragment StoreEntitySet="LOAIPHONG_TBL">
+                <ScalarProperty Name="MOTA" ColumnName="MOTA" />
+                <ScalarProperty Name="TIENTHEOH" ColumnName="TIENTHEOH" />
+                <ScalarProperty Name="TIENTHEOD" ColumnName="TIENTHEOD" />
+                <ScalarProperty Name="SOGIUONG" ColumnName="SOGIUONG" />
+                <ScalarProperty Name="SUCCHUA" ColumnName="SUCCHUA" />
+                <ScalarProperty Name="TENLOAIPHONG" ColumnName="TENLOAIPHONG" />
+                <ScalarProperty Name="MALOAIPHONG" ColumnName="MALOAIPHONG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NHANVIEN_TBL">
+            <EntityTypeMapping TypeName="QLKSModel.NHANVIEN_TBL">
+              <MappingFragment StoreEntitySet="NHANVIEN_TBL">
+                <ScalarProperty Name="MATRANGTHAI" ColumnName="MATRANGTHAI" />
+                <ScalarProperty Name="NGAYHIEULUC" ColumnName="NGAYHIEULUC" />
+                <ScalarProperty Name="MAQT" ColumnName="MAQT" />
+                <ScalarProperty Name="QUEQUAN" ColumnName="QUEQUAN" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="SOLIENHE" ColumnName="SOLIENHE" />
+                <ScalarProperty Name="MAGT" ColumnName="MAGT" />
+                <ScalarProperty Name="HINHNEN" ColumnName="HINHNEN" />
+                <ScalarProperty Name="HOVATEN" ColumnName="HOVATEN" />
+                <ScalarProperty Name="IDNV" ColumnName="IDNV" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PAYMENTTIME_TBL">
+            <EntityTypeMapping TypeName="QLKSModel.PAYMENTTIME_TBL">
+              <MappingFragment StoreEntitySet="PAYMENTTIME_TBL">
+                <ScalarProperty Name="MOTA" ColumnName="MOTA" />
+                <ScalarProperty Name="TENTHOIDIEM" ColumnName="TENTHOIDIEM" />
+                <ScalarProperty Name="MATHOIDIEM" ColumnName="MATHOIDIEM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PHONGDAT_TBL">
+            <EntityTypeMapping TypeName="QLKSModel.PHONGDAT_TBL">
+              <MappingFragment StoreEntitySet="PHONGDAT_TBL">
+                <ScalarProperty Name="GHICHU" ColumnName="GHICHU" />
+                <ScalarProperty Name="MATRANGTHAI" ColumnName="MATRANGTHAI" />
+                <ScalarProperty Name="GIAPHONG" ColumnName="GIAPHONG" />
+                <ScalarProperty Name="MALOAIHINH" ColumnName="MALOAIHINH" />
+                <ScalarProperty Name="THOIHAN" ColumnName="THOIHAN" />
+                <ScalarProperty Name="NGAYTRA" ColumnName="NGAYTRA" />
+                <ScalarProperty Name="NGAYLAY" ColumnName="NGAYLAY" />
+                <ScalarProperty Name="NGAYDAT" ColumnName="NGAYDAT" />
+                <ScalarProperty Name="MAPHONG" ColumnName="MAPHONG" />
+                <ScalarProperty Name="IDKHACH" ColumnName="IDKHACH" />
+                <ScalarProperty Name="MAPHONGDAT" ColumnName="MAPHONGDAT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PHONGNGHI_TBL">
+            <EntityTypeMapping TypeName="QLKSModel.PHONGNGHI_TBL">
+              <MappingFragment StoreEntitySet="PHONGNGHI_TBL">
+                <ScalarProperty Name="MATRANGTHAI" ColumnName="MATRANGTHAI" />
+                <ScalarProperty Name="MATINHTRANG" ColumnName="MATINHTRANG" />
+                <ScalarProperty Name="MALOAIPHONG" ColumnName="MALOAIPHONG" />
+                <ScalarProperty Name="TANGTHU" ColumnName="TANGTHU" />
+                <ScalarProperty Name="TENPHONG" ColumnName="TENPHONG" />
+                <ScalarProperty Name="MAPHONG" ColumnName="MAPHONG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QUOCTICH_TBL">
+            <EntityTypeMapping TypeName="QLKSModel.QUOCTICH_TBL">
+              <MappingFragment StoreEntitySet="QUOCTICH_TBL">
+                <ScalarProperty Name="QUOCTICH" ColumnName="QUOCTICH" />
+                <ScalarProperty Name="MAQT" ColumnName="MAQT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TANGHOTEL_TBL">
+            <EntityTypeMapping TypeName="QLKSModel.TANGHOTEL_TBL">
+              <MappingFragment StoreEntitySet="TANGHOTEL_TBL">
+                <ScalarProperty Name="TENTANG" ColumnName="TENTANG" />
+                <ScalarProperty Name="TANGTHU" ColumnName="TANGTHU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TINHTRANGPHONG_TBL">
+            <EntityTypeMapping TypeName="QLKSModel.TINHTRANGPHONG_TBL">
+              <MappingFragment StoreEntitySet="TINHTRANGPHONG_TBL">
+                <ScalarProperty Name="MOTA" ColumnName="MOTA" />
+                <ScalarProperty Name="TENTINHTRANG" ColumnName="TENTINHTRANG" />
+                <ScalarProperty Name="MATINHTRANG" ColumnName="MATINHTRANG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TRANGTHAIDATDV_TBL">
+            <EntityTypeMapping TypeName="QLKSModel.TRANGTHAIDATDV_TBL">
+              <MappingFragment StoreEntitySet="TRANGTHAIDATDV_TBL">
+                <ScalarProperty Name="MOTA" ColumnName="MOTA" />
+                <ScalarProperty Name="TENTRANGTHAI" ColumnName="TENTRANGTHAI" />
+                <ScalarProperty Name="MATRANGTHAI" ColumnName="MATRANGTHAI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TRANGTHAIDP_TBL">
+            <EntityTypeMapping TypeName="QLKSModel.TRANGTHAIDP_TBL">
+              <MappingFragment StoreEntitySet="TRANGTHAIDP_TBL">
+                <ScalarProperty Name="MOTA" ColumnName="MOTA" />
+                <ScalarProperty Name="TENTRANGTHAI" ColumnName="TENTRANGTHAI" />
+                <ScalarProperty Name="MATRANGTHAI" ColumnName="MATRANGTHAI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TRANGTHAIDV_TBL">
+            <EntityTypeMapping TypeName="QLKSModel.TRANGTHAIDV_TBL">
+              <MappingFragment StoreEntitySet="TRANGTHAIDV_TBL">
+                <ScalarProperty Name="MOTA" ColumnName="MOTA" />
+                <ScalarProperty Name="TENTRANGTHAI" ColumnName="TENTRANGTHAI" />
+                <ScalarProperty Name="MATRANGTHAI" ColumnName="MATRANGTHAI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TRANGTHAIHD_TBL">
+            <EntityTypeMapping TypeName="QLKSModel.TRANGTHAIHD_TBL">
+              <MappingFragment StoreEntitySet="TRANGTHAIHD_TBL">
+                <ScalarProperty Name="MOTA" ColumnName="MOTA" />
+                <ScalarProperty Name="TENTRANGTHAI" ColumnName="TENTRANGTHAI" />
+                <ScalarProperty Name="MATRANGTHAI" ColumnName="MATRANGTHAI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TRANGTHAINV_TBL">
+            <EntityTypeMapping TypeName="QLKSModel.TRANGTHAINV_TBL">
+              <MappingFragment StoreEntitySet="TRANGTHAINV_TBL">
+                <ScalarProperty Name="MOTA" ColumnName="MOTA" />
+                <ScalarProperty Name="TENTRANGTHAI" ColumnName="TENTRANGTHAI" />
+                <ScalarProperty Name="MATRANGTHAI" ColumnName="MATRANGTHAI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TRANGTHAIPHONG_TBL">
+            <EntityTypeMapping TypeName="QLKSModel.TRANGTHAIPHONG_TBL">
+              <MappingFragment StoreEntitySet="TRANGTHAIPHONG_TBL">
+                <ScalarProperty Name="MOTA" ColumnName="MOTA" />
+                <ScalarProperty Name="TENTRANGTHAI" ColumnName="TENTRANGTHAI" />
+                <ScalarProperty Name="MATRANGTHAI" ColumnName="MATRANGTHAI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QUYENHAN_TBL">
+            <EntityTypeMapping TypeName="QLKSModel.QUYENHAN_TBL">
+              <MappingFragment StoreEntitySet="QUYENHAN_TBL">
+                <ScalarProperty Name="MOTA" ColumnName="MOTA" />
+                <ScalarProperty Name="ROLE" ColumnName="ROLE" />
+                <ScalarProperty Name="MAQH" ColumnName="MAQH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TAIKHOAN_TBL">
+            <EntityTypeMapping TypeName="QLKSModel.TAIKHOAN_TBL">
+              <MappingFragment StoreEntitySet="TAIKHOAN_TBL">
+                <ScalarProperty Name="MAQH" ColumnName="MAQH" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="IDNV" ColumnName="IDNV" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35219.272
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DATALAYER", "DATALAYER\DATALAYER.csproj", "{6F37EA8D-8283-4ACB-BD0D-1DF7EB6CB318}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LOGICLAYER", "LOGICLAYER\LOGICLAYER.csproj", "{FB70443B-769F-4AE9-9C7A-4F51AF957C86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUILAYER", "GUILAYER\GUILAYER.csproj", "{3EB397A8-9CE3-4E7A-84EE-E5CBD074C62D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6F37EA8D-8283-4ACB-BD0D-1DF7EB6CB318}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F37EA8D-8283-4ACB-BD0D-1DF7EB6CB318}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F37EA8D-8283-4ACB-BD0D-1DF7EB6CB318}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F37EA8D-8283-4ACB-BD0D-1DF7EB6CB318}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB70443B-769F-4AE9-9C7A-4F51AF957C86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB70443B-769F-4AE9-9C7A-4F51AF957C86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB70443B-769F-4AE9-9C7A-4F51AF957C86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB70443B-769F-4AE9-9C7A-4F51AF957C86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EB397A8-9CE3-4E7A-84EE-E5CBD074C62D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EB397A8-9CE3-4E7A-84EE-E5CBD074C62D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EB397A8-9CE3-4E7A-84EE-E5CBD074C62D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EB397A8-9CE3-4E7A-84EE-E5CBD074C62D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E7C06E1B-A0C6-48D8-93FB-900329910100}
+	EndGlobalSection
+EndGlobal

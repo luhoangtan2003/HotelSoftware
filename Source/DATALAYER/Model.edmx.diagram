@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c7d2cba085d04bf9bbc212d41372e16a" Name="Diagram1" ZoomLevel="100" ShowGrid="true" SnapToGrid="true" DisplayType="false">
+        <EntityTypeShape EntityType="QLKSModel.DATDICHVU_TBL" Width="1.5" PointX="13.625" PointY="12.625" />
+        <EntityTypeShape EntityType="QLKSModel.DICHVU_TBL" Width="1.5" PointX="17.75" PointY="13.5" />
+        <EntityTypeShape EntityType="QLKSModel.GIOITINH_TBL" Width="1.5" PointX="4.75" PointY="5.5" />
+        <EntityTypeShape EntityType="QLKSModel.HOADONDATDV_TBL" Width="1.5" PointX="19" PointY="8.25" />
+        <EntityTypeShape EntityType="QLKSModel.HOADONPHONG_TBL" Width="1.5" PointX="16.25" PointY="5.625" />
+        <EntityTypeShape EntityType="QLKSModel.KHACHHANG_TBL" Width="1.5" PointX="8.125" PointY="5.5" />
+        <EntityTypeShape EntityType="QLKSModel.LOAIDV_TBL" Width="1.5" PointX="20" PointY="17.25" />
+        <EntityTypeShape EntityType="QLKSModel.LOAIHINHDP_TBL" Width="1.5" PointX="10.25" PointY="12.875" />
+        <EntityTypeShape EntityType="QLKSModel.LOAIHINHDV_TBL" Width="1.5" PointX="17.75" PointY="17.25" />
+        <EntityTypeShape EntityType="QLKSModel.LOAIPHONG_TBL" Width="1.5" PointX="5.75" PointY="12.875" />
+        <EntityTypeShape EntityType="QLKSModel.NHANVIEN_TBL" Width="1.5" PointX="1.5" PointY="5.5" />
+        <EntityTypeShape EntityType="QLKSModel.PAYMENTTIME_TBL" Width="1.5" PointX="19" PointY="5.625" />
+        <EntityTypeShape EntityType="QLKSModel.PHONGDAT_TBL" Width="1.5" PointX="10.875" PointY="5.5" />
+        <EntityTypeShape EntityType="QLKSModel.PHONGNGHI_TBL" Width="1.5" PointX="8" PointY="12.875" />
+        <EntityTypeShape EntityType="QLKSModel.QUOCTICH_TBL" Width="1.5" PointX="4.75" PointY="7.875" />
+        <EntityTypeShape EntityType="QLKSModel.TANGHOTEL_TBL" Width="1.5" PointX="9" PointY="10.25" />
+        <EntityTypeShape EntityType="QLKSModel.TINHTRANGPHONG_TBL" Width="1.5" PointX="5.75" PointY="16.375" />
+        <EntityTypeShape EntityType="QLKSModel.TRANGTHAIDATDV_TBL" Width="1.5" PointX="13.625" PointY="10" />
+        <EntityTypeShape EntityType="QLKSModel.TRANGTHAIDP_TBL" Width="1.5" PointX="13.625" PointY="6.875" />
+        <EntityTypeShape EntityType="QLKSModel.TRANGTHAIDV_TBL" Width="1.5" PointX="15.5" PointY="17.25" />
+        <EntityTypeShape EntityType="QLKSModel.TRANGTHAIHD_TBL" Width="1.5" PointX="16.375" PointY="10.125" />
+        <EntityTypeShape EntityType="QLKSModel.TRANGTHAINV_TBL" Width="1.5" PointX="4.75" PointY="10.375" />
+        <EntityTypeShape EntityType="QLKSModel.TRANGTHAIPHONG_TBL" Width="1.5" PointX="10" PointY="16.375" />
+        <AssociationConnector Association="QLKSModel.FK_DATDICHVU_TBL_DICHVU_TBL" />
+        <AssociationConnector Association="QLKSModel.FK_DATDICHVU_TBL_HOADONDATDV_TBL" />
+        <AssociationConnector Association="QLKSModel.FK_DATDICHVU_TBL_PHONGDAT_TBL" />
+        <AssociationConnector Association="QLKSModel.FK_DATDICHVU_TBL_TRANGTHAIDATDV_TBL" />
+        <AssociationConnector Association="QLKSModel.FK_DICHVU_TBL_LOAIDV_TBL" />
+        <AssociationConnector Association="QLKSModel.FK_DICHVU_TBL_LOAIHINHDV_TBL" />
+        <AssociationConnector Association="QLKSModel.FK_DICHVU_TBL_TRANGTHAIDV_TBL" />
+        <AssociationConnector Association="QLKSModel.FK_KHACHHANG_TBL_GIOITINH_TBL" />
+        <AssociationConnector Association="QLKSModel.FK_NHANVIEN_TBL_GIOITINH_TBL" />
+        <AssociationConnector Association="QLKSModel.FK_HOADONDATDV_TBL_TRANGTHAIHD_TBL" />
+        <AssociationConnector Association="QLKSModel.FK_HOADON_TBL_PHONGDAT_TBL" />
+        <AssociationConnector Association="QLKSModel.FK_HOADON_TBL_TRANGTHAIHD_TBL" />
+        <AssociationConnector Association="QLKSModel.FK_HOADONPHONG_TBL_PAYMENTTIME_TBL" />
+        <AssociationConnector Association="QLKSModel.FK_KHACHHANG_TBL_QUOCTICH_TBL" />
+        <AssociationConnector Association="QLKSModel.FK_PHONGDAT_TBL_KHACHHANG_TBL" />
+        <AssociationConnector Association="QLKSModel.FK_PHONGDAT_TBL_LOAIHINHDP_TBL1" />
+        <AssociationConnector Association="QLKSModel.FK_PHONGNGHI_TBL_LOAIPHONG_TBL" />
+        <AssociationConnector Association="QLKSModel.FK_NHANVIEN_TBL_QUOCTICH_TBL" />
+        <AssociationConnector Association="QLKSModel.FK_NHANVIEN_TBL_TRANGTHAINV_TBL" />
+        <AssociationConnector Association="QLKSModel.FK_PHONGDAT_TBL_PHONGNGHI_TBL" />
+        <AssociationConnector Association="QLKSModel.FK_PHONGDAT_TBL_TRANGTHAIDP_TBL1" />
+        <AssociationConnector Association="QLKSModel.FK_PHONG_TBL_TANG_TBL" />
+        <AssociationConnector Association="QLKSModel.FK_PHONG_TBL_TINHTRANGPHONG_TBL" />
+        <AssociationConnector Association="QLKSModel.FK_PHONGNGHI_TBL_TRANGTHAIPHONG_TBL" />
+        <EntityTypeShape EntityType="QLKSModel.QUYENHAN_TBL" Width="1.5" PointX="1.5" PointY="13.625" />
+        <EntityTypeShape EntityType="QLKSModel.TAIKHOAN_TBL" Width="1.5" PointX="1.5" PointY="10.625" />
+        <AssociationConnector Association="QLKSModel.FK_TAIKHOAN_TBL_NHANVIEN_TBL" />
+        <AssociationConnector Association="QLKSModel.FK_TAIKHOAN_TBL_VAITROCV_TBL" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

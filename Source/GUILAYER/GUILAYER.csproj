@@ -1,0 +1,583 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\Packages\EntityFramework.6.5.1\build\EntityFramework.props" Condition="Exists('..\Packages\EntityFramework.6.5.1\build\EntityFramework.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3EB397A8-9CE3-4E7A-84EE-E5CBD074C62D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GUILAYER</RootNamespace>
+    <AssemblyName>GUILAYER</AssemblyName>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <LangVersion>9.0</LangVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v24.1" />
+    <Reference Include="DevExpress.Charts.v24.1.Core, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.Desktop.v24.1" />
+    <Reference Include="DevExpress.Data.v24.1" />
+    <Reference Include="DevExpress.Dialogs.v24.1.Core, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v24.1.Core, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v24.1.Core, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v24.1.Drawing, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.PivotGrid.v24.1.Core, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v24.1.Core, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v24.1.Core, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v24.1.Export, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v24.1.Core, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v24.1.UI, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v24.1" />
+    <Reference Include="DevExpress.Drawing.v24.1" />
+    <Reference Include="DevExpress.XtraCharts.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v24.1.UI, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v24.1.Wizard, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraDialogs.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v24.1.Core, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPdfViewer.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v24.1.Extensions, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\Packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\Packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2">
+      <HintPath>C:\Users\LHT\OneDrive\Documents\Initialization\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Core, Version=1.0.2903.40, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.2903.40\lib\net462\Microsoft.Web.WebView2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.WinForms, Version=1.0.2903.40, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.2903.40\lib\net462\Microsoft.Web.WebView2.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Wpf, Version=1.0.2903.40, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.2903.40\lib\net462\Microsoft.Web.WebView2.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChuongThongBaoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChuongThongBaoForm.Designer.cs">
+      <DependentUpon>ChuongThongBaoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DatPhongNghiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DatPhongNghiForm.Designer.cs">
+      <DependentUpon>DatPhongNghiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DichVuYeuCauForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DichVuYeuCauForm.Designer.cs">
+      <DependentUpon>DichVuYeuCauForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChuyenPhongForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChuyenPhongForm.Designer.cs">
+      <DependentUpon>ChuyenPhongForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyMailboxForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyMailboxForm.Designer.cs">
+      <DependentUpon>QuanLyMailboxForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HoaDonPhongReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HoaDonPhongReport.Designer.cs">
+      <DependentUpon>HoaDonPhongReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanTriNhanSuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanTriNhanSuForm.Designer.cs">
+      <DependentUpon>QuanTriNhanSuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RevenueStatisticsReport\PhanTichDuLieuTheoD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RevenueStatisticsReport\PhanTichDuLieuTheoD.Designer.cs">
+      <DependentUpon>PhanTichDuLieuTheoD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RevenueStatisticsReport\PhanTichDuLieuTheoM.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RevenueStatisticsReport\PhanTichDuLieuTheoM.Designer.cs">
+      <DependentUpon>PhanTichDuLieuTheoM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RevenueStatisticsReport\ThongKeDuLieuTheoM.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RevenueStatisticsReport\ThongKeDuLieuTheoM.Designer.cs">
+      <DependentUpon>ThongKeDuLieuTheoM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RevenueStatisticsReport\ThongKeDuLieuTheoD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RevenueStatisticsReport\ThongKeDuLieuTheoD.Designer.cs">
+      <DependentUpon>ThongKeDuLieuTheoD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KhoiPhucSaoLuuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KhoiPhucSaoLuuForm.Designer.cs">
+      <DependentUpon>KhoiPhucSaoLuuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThongTinKhachSan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongTinKhachSan.Designer.cs">
+      <DependentUpon>ThongTinKhachSan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThanhToanBillForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThanhToanBillForm.Designer.cs">
+      <DependentUpon>ThanhToanBillForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KhachHangForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KhachHangForm.Designer.cs">
+      <DependentUpon>KhachHangForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LayVaTraPhongForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LayVaTraPhongForm.Designer.cs">
+      <DependentUpon>LayVaTraPhongForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProgressLoadingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProgressLoadingForm.Designer.cs">
+      <DependentUpon>ProgressLoadingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BinForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BinForm.Designer.cs">
+      <DependentUpon>BinForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoaiDichVuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoaiDichVuForm.Designer.cs">
+      <DependentUpon>LoaiDichVuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoaiPhongNghiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoaiPhongNghiForm.Designer.cs">
+      <DependentUpon>LoaiPhongNghiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomePageQLKSForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomePageQLKSForm.Designer.cs">
+      <DependentUpon>HomePageQLKSForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhongNghiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhongNghiForm.Designer.cs">
+      <DependentUpon>PhongNghiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SplashScreenProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreenProject.Designer.cs">
+      <DependentUpon>SplashScreenProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TangHotelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TangHotelForm.Designer.cs">
+      <DependentUpon>TangHotelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaoCaoLoiNhuanForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCaoLoiNhuanForm.Designer.cs">
+      <DependentUpon>BaoCaoLoiNhuanForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThongTinDichVuKS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongTinDichVuKS.Designer.cs">
+      <DependentUpon>ThongTinDichVuKS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThongTinKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongTinKhachHang.Designer.cs">
+      <DependentUpon>ThongTinKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThongTinLoaiDichVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongTinLoaiDichVu.Designer.cs">
+      <DependentUpon>ThongTinLoaiDichVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThongTinLoaiPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongTinLoaiPhong.Designer.cs">
+      <DependentUpon>ThongTinLoaiPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThongTinNhanPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongTinNhanPhong.Designer.cs">
+      <DependentUpon>ThongTinNhanPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThongTinPhongNghi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongTinPhongNghi.Designer.cs">
+      <DependentUpon>ThongTinPhongNghi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThongTinTangHotel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongTinTangHotel.Designer.cs">
+      <DependentUpon>ThongTinTangHotel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThongTinDatPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongTinDatPhong.Designer.cs">
+      <DependentUpon>ThongTinDatPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThongTinTraPhongO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongTinTraPhongO.Designer.cs">
+      <DependentUpon>ThongTinTraPhongO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YeuCauDichVuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YeuCauDichVuForm.Designer.cs">
+      <DependentUpon>YeuCauDichVuForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ChuongThongBaoForm.resx">
+      <DependentUpon>ChuongThongBaoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatPhongNghiForm.resx">
+      <DependentUpon>DatPhongNghiForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DichVuYeuCauForm.resx">
+      <DependentUpon>DichVuYeuCauForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChuyenPhongForm.resx">
+      <DependentUpon>ChuyenPhongForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanTriNhanSuForm.resx">
+      <DependentUpon>QuanTriNhanSuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongTinKhachSan.resx">
+      <DependentUpon>ThongTinKhachSan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HoaDonPhongReport.resx">
+      <DependentUpon>HoaDonPhongReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KhoiPhucSaoLuuForm.resx">
+      <DependentUpon>KhoiPhucSaoLuuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyMailboxForm.resx">
+      <DependentUpon>QuanLyMailboxForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RevenueStatisticsReport\PhanTichDuLieuTheoD.resx">
+      <DependentUpon>PhanTichDuLieuTheoD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RevenueStatisticsReport\PhanTichDuLieuTheoM.resx">
+      <DependentUpon>PhanTichDuLieuTheoM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RevenueStatisticsReport\ThongKeDuLieuTheoM.resx">
+      <DependentUpon>ThongKeDuLieuTheoM.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RevenueStatisticsReport\ThongKeDuLieuTheoD.resx">
+      <DependentUpon>ThongKeDuLieuTheoD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThanhToanBillForm.resx">
+      <DependentUpon>ThanhToanBillForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KhachHangForm.resx">
+      <DependentUpon>KhachHangForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LayVaTraPhongForm.resx">
+      <DependentUpon>LayVaTraPhongForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgressLoadingForm.resx">
+      <DependentUpon>ProgressLoadingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BinForm.resx">
+      <DependentUpon>BinForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoaiDichVuForm.resx">
+      <DependentUpon>LoaiDichVuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoaiPhongNghiForm.resx">
+      <DependentUpon>LoaiPhongNghiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomePageQLKSForm.resx">
+      <DependentUpon>HomePageQLKSForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhongNghiForm.resx">
+      <DependentUpon>PhongNghiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreenProject.resx">
+      <DependentUpon>SplashScreenProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TangHotelForm.resx">
+      <DependentUpon>TangHotelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCaoLoiNhuanForm.resx">
+      <DependentUpon>BaoCaoLoiNhuanForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongTinDichVuKS.resx">
+      <DependentUpon>ThongTinDichVuKS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongTinKhachHang.resx">
+      <DependentUpon>ThongTinKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongTinLoaiDichVu.resx">
+      <DependentUpon>ThongTinLoaiDichVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongTinLoaiPhong.resx">
+      <DependentUpon>ThongTinLoaiPhong.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongTinNhanPhong.resx">
+      <DependentUpon>ThongTinNhanPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongTinPhongNghi.resx">
+      <DependentUpon>ThongTinPhongNghi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongTinTangHotel.resx">
+      <DependentUpon>ThongTinTangHotel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongTinDatPhong.resx">
+      <DependentUpon>ThongTinDatPhong.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongTinTraPhongO.resx">
+      <DependentUpon>ThongTinTraPhongO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YeuCauDichVuForm.resx">
+      <DependentUpon>YeuCauDichVuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="Packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DATALAYER\DATALAYER.csproj">
+      <Project>{6f37ea8d-8283-4acb-bd0d-1df7eb6cb318}</Project>
+      <Name>DATALAYER</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LOGICLAYER\LOGICLAYER.csproj">
+      <Project>{fb70443b-769f-4ae9-9c7a-4f51af957c86}</Project>
+      <Name>LOGICLAYER</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddGuest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancellation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reservation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reserved.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Suspended.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Occupied.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Available.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Conflict.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NotGranted.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Transaction.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gmail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Service.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Revenue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Invoice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Floor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Room.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Customer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Booking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Granted.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Finish.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Change.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Order.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Backup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Restore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\Packages\EntityFramework.6.5.1\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\Packages\EntityFramework.6.5.1\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\Packages\EntityFramework.6.5.1\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\Packages\EntityFramework.6.5.1\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Web.WebView2.1.0.2903.40\build\Microsoft.Web.WebView2.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Web.WebView2.1.0.2903.40\build\Microsoft.Web.WebView2.targets'))" />
+  </Target>
+  <Import Project="..\Packages\EntityFramework.6.5.1\build\EntityFramework.targets" Condition="Exists('..\Packages\EntityFramework.6.5.1\build\EntityFramework.targets')" />
+  <Import Project="..\packages\Microsoft.Web.WebView2.1.0.2903.40\build\Microsoft.Web.WebView2.targets" Condition="Exists('..\packages\Microsoft.Web.WebView2.1.0.2903.40\build\Microsoft.Web.WebView2.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
